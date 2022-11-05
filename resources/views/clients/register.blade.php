@@ -1,0 +1,12 @@
+@extends('layouts.register')
+@section('style')
+    <style>
+        @include('css.HeaderCss');
+        @include('css.LoginCss');
+    </style>
+@endsection
+@section('script')
+<script>
+    @include('js.HeaderJs');
+</script>
+@endsection
