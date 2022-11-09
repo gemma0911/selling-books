@@ -78,5 +78,6 @@
             </div>
         </div>
         @include('components.footer')
+        <script src="{{asset('assets/clients/js/HeaderJs.js')}}"></script>
     </body>
     </html>
