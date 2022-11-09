@@ -78,5 +78,4 @@
     @include('components.footer')
     @yield('script')
 </body>
-
 </html>

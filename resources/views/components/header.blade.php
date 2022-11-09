@@ -16,27 +16,6 @@
                                     alt=""></div><a
                                 href="mailto:fastsales@gmail.com">contact@bbbootstrap.com</a>
                         </div>
-                        <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Italian</a></li>
-                                            <li><a href="#">Spanish</a></li>
-                                            <li><a href="#">Japanese</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">EUR Euro</a></li>
-                                            <li><a href="#">GBP British Pound</a></li>
-                                            <li><a href="#">JPY Japanese Yen</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img
                                         src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg"
@@ -146,7 +125,7 @@
                                         </ul>
                                     </li>
                                     <li class="hassubs">
-                                        <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
+                                        <a href="#">Giỏ hàng<i class="fas fa-chevron-down"></i></a>
                                         <ul>
                                             <li>
                                                 <a href="#">APPLE<i class="fas fa-chevron-down"></i></a>
@@ -213,7 +192,7 @@
                             </div>
                             <ul class="page_menu_nav">
                                 <li class="page_menu_item has-children">
-                                    <a href="#">Language<i class="fa fa-angle-down"></i></a>
+                                    <a href="#">Trang chủ<i class="fa fa-angle-down"></i></a>
                                     <ul class="page_menu_selection">
                                         <li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
                                         <li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
@@ -222,7 +201,7 @@
                                     </ul>
                                 </li>
                                 <li class="page_menu_item has-children">
-                                    <a href="#">Currency<i class="fa fa-angle-down"></i></a>
+                                    <a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
                                     <ul class="page_menu_selection">
                                         <li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
                                         <li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
@@ -233,7 +212,7 @@
                                     </ul>
                                 </li>
                                 <li class="page_menu_item">
-                                    <a href="#">Home<i class="fa fa-angle-down"></i></a>
+                                    <a href="#">Giỏ hàng<i class="fa fa-angle-down"></i></a>
                                 </li>
                                 <li class="page_menu_item has-children">
                                     <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
@@ -275,9 +254,9 @@
                                         <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
                                     </ul>
                                 </li>
-                                <li class="page_menu_item"><a href="blog.html">blog<i
+                                <li class="page_menu_item"><a href="blog.html">Liên hệ<i
                                             class="fa fa-angle-down"></i></a></li>
-                                <li class="page_menu_item"><a href="contact.html">contact<i
+                                <li class="page_menu_item"><a href="contact.html">Đăng nhập<i
                                             class="fa fa-angle-down"></i></a></li>
                             </ul>
 

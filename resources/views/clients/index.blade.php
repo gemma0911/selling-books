@@ -6,9 +6,7 @@
 @endsection
 
 @section('script')
-<script>
     @include('js.HeaderJs');
-</script>
 @endsection
 
 
