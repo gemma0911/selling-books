@@ -106,7 +106,7 @@
                                 <ul class="standard_dropdown main_nav_dropdown">
                                     <li><a href="{{ route('index')}}">Trang chủ<i class="fas fa-chevron-down"></i></a></li>
                                     <li class="hassubs">
-                                        <a href="#">Sản phẩm<i class="fas fa-chevron-down"></i></a>
+                                        <a href="{{ route('product')}}">Sản phẩm<i class="fas fa-chevron-down"></i></a>
                                         <ul>
                                             <li>
                                                 <a href="#">Lenovo<i class="fas fa-chevron-down"></i></a>
