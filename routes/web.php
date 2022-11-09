@@ -4,6 +4,7 @@ use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\auth\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,5 @@ Route::get('/login', [LoginController::class, 'getAuthLogin'])->name('login.get'
 Route::post('/login', [LoginController::class, 'postAuthLogin'])->name('login.post');
 
 Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/logout', [LogoutController::class, 'index'])->name('logout');

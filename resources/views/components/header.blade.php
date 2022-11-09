@@ -25,7 +25,7 @@
                                 <div><a href="{{ route('login.get')}}">Sign in</a></div>
                                 @else
                                 <div><a>{{session()->get('name')}}</a></div>
-                                <div><a href="{{ route('login.get')}}">Logout</a></div>
+                                <div><a href="{{ route('logout')}}">Logout</a></div>
                                 @endif
                             </div>
                         </div>
