@@ -1,27 +1,3 @@
-<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <div class="me-5 d-none d-lg-block">
-    </div>
-    <div>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
-</section>
 <section class="">
     <div class="container text-center text-md-start mt-5">
         <div class="row mt-3">
@@ -73,7 +49,7 @@
                 <p><i class="fas fa-home me-3 bi bi-house-fill"></i> New York, NY 10012, US</p>
                 <p><i class="fas fa-home me-3 bi-envelope-fill"></i>info@example.com</p>
                 <p><i class="fas fa-phone me-3 bi bi-telephone-outbound-fill"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print me-3 "></i> + 01 234 567 89</p>
+                <p><i class="fas fa-print me-3 bi bi-telephone-outbound-fill"></i> + 01 234 567 89</p>
             </div>
         </div>
     </div>

@@ -25,13 +25,14 @@
     </header>
     <main>
         <aside>
+
         </aside>
         <div class="content">
+
         </div>
     </main>
     <footer>
         @include('components.footer')
     </footer>
-    <script src="{{asset('assets/clients/js/HeaderJs.js') }}"></script>
 </body>
 </html>

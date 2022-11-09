@@ -20,7 +20,6 @@ class LoginController extends Controller
     }
     public function postAuthLogin(Request $request)
     {
-        $value = Session::put('name', 'value');
         $this->validate($request, [
             'email'   => 'required|email',
             'password'  => 'required|alphaNum|min:3'
@@ -33,6 +32,7 @@ class LoginController extends Controller
 
         if(auth()->attempt($user_data))
         {
+            $value = Session::put('name', 'value');
             return view('clients.index');
         }else{
             return redirect()->route('login.get')

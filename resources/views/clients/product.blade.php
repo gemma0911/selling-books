@@ -7,28 +7,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('assets/clients/css/HeaderCss.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/clients/css/ProductCss.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     @include('components.header')
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="category.html">Category</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Sub-category</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-3">
@@ -53,9 +43,99 @@
                         <p class="bloc_left_price">99.00 $</p>
                     </div>
                 </div>
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-success text-white text-uppercase">Last product</div>
+                    <div class="card-body">
+                        <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
+                        <h5 class="card-title">Product title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <p class="bloc_left_price">99.00 $</p>
+                    </div>
+                </div>
             </div>
             <div class="col">
                 <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/_/c/_chainsaw-man_vol-01_b_a-_o-_g_c_.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
+                                </h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="btn btn-danger btn-block">99.00 $</p>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
+                                </h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="btn btn-danger btn-block">99.00 $</p>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
+                                </h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="btn btn-danger btn-block">99.00 $</p>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
+                                </h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="btn btn-danger btn-block">99.00 $</p>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff"
@@ -197,5 +277,7 @@
             </div>
         </div>
     </div>
+    @include('components.footer')
+    <script src="{{asset('assets/clients/js/HeaderJs.js') }}"></script>
 </body>
 </html>
