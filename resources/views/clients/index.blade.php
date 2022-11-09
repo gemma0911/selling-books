@@ -25,10 +25,8 @@
     </header>
     <main>
         <aside>
-
         </aside>
         <div class="content">
-
         </div>
     </main>
     <footer>
