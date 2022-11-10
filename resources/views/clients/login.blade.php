@@ -57,10 +57,6 @@
                                     </div>
                                 </div>
                                 <div class="login_remember_box">
-                                    <label class="control control--checkbox">Remember me
-                                        <input type="checkbox">
-                                        <span class="control__indicator"></span>
-                                    </label>
                                     <a href="#" class="forget_password">
                                         Forgot Password
                                     </a>
@@ -78,6 +74,6 @@
             </div>
         </div>
         @include('components.footer')
-        <script src="{{asset('assets/clients/js/HeaderJs.js')}}"></script>
+        <script src="{{asset('assets/clients/js/HeaderJs.js') }}"></script>
     </body>
     </html>
