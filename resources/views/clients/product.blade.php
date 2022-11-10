@@ -9,16 +9,22 @@
     <link rel="stylesheet" href="{{ asset('assets/clients/css/ProductCss.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-    @include('components.header')
+    <header>
+        @include('components.header')
+    </header>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-3">
@@ -58,7 +64,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/_/c/_chainsaw-man_vol-01_b_a-_o-_g_c_.jpg"
+                            <img class="card-img-top"
+                                src="https://cdn0.fahasa.com/media/catalog/product/_/c/_chainsaw-man_vol-01_b_a-_o-_g_c_.jpg"
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
@@ -78,7 +85,8 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
+                            <img class="card-img-top"
+                                src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
@@ -98,7 +106,8 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <img class="card-img-top" src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
+                            <img class="card-img-top"
+                                src="https://cdn0.fahasa.com/media/catalog/product/k/o/komi-nu-than-so-giao-tiep---tap-11.jpg"
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title"><a href="product.html" title="View Product">Product title</a>
@@ -278,6 +287,7 @@
         </div>
     </div>
     @include('components.footer')
-    <script src="{{asset('assets/clients/js/HeaderJs.js') }}"></script>
+    <script src="{{ asset('assets/clients/js/HeaderJs.js') }}"></script>
 </body>
+
 </html>
