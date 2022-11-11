@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LogoutController;
+use App\Http\Controllers\product\PaginationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +21,6 @@ Route::get('/',function(){
     return view('clients.index');
 })->name('index');
 
-Route::get('/product',function(){
-    return view('clients.product');
-})->name('product');
-
 Route::get('/cart',function(){
     return view('cart');
 })->name('cart');
@@ -37,3 +34,5 @@ Route::post('/login', [LoginController::class, 'postAuthLogin'])->name('login.po
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
+
+Route::get('/product', [PaginationController::class, 'index'])->name('product');
