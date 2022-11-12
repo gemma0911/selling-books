@@ -17,6 +17,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
+    <script>
+        function addtocart($id) {
+            console.log($id)
+            $.ajax({
+                url: '{{route('add-to-cart')}}',
+                type: "get",
+                dateType: "text",
+                data: {
+                    id: $id,
+                },
+            });
+            if($.ajax) {
+                alert('them thanh cong');
+            }
+        }
+    </script>
 </head>
 <style>
     .btn-light {
@@ -47,21 +63,22 @@
                 <div class="product-group">
                     <div class="row">
                         @foreach ($data as $product)
-                        <div class="col-md-2 col-sm-4 col-12">
-                            <div class="card card-product mb-3">
-                                <img class="card-img-top" src="/assets/images/{{$product->images}}">
-                                <div class="card-body">
-                                    <h5 class="card-title product-title">1</h5>
-                                    <div class="card-text product-price">
-                                        <span class="del-price">100.000 vnd</span>
-                                        <span class="new-price">1</span>
+                            <div class="col-md-2 col-sm-4 col-12">
+                                <div class="card card-product mb-3">
+                                    <img class="card-img-top" src="/assets/images/{{ $product->images }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title product-title">1</h5>
+                                        <div class="card-text product-price">
+                                            <span class="del-price">100.000 vnd</span>
+                                            <span class="new-price">1</span>
+                                        </div>
+                                        <button class="btn btn-info btn-add-to-cart"
+                                            onclick="addtocart({{ $product->id }})"><i
+                                                class="fas fa-shopping-cart"></i></button>
+                                        <a class="btn btn-outline-info btn-detail">Xem chi tiết</a>
                                     </div>
-                                    <button class="btn btn-info btn-add-to-cart"><i
-                                            class="fas fa-shopping-cart"></i></button>
-                                    <a class="btn btn-outline-info btn-detail">Xem chi tiết</a>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -79,4 +96,5 @@
     @include('components.footer')
     <script src="{{ asset('assets/clients/js/HeaderJs.js') }}"></script>
 </body>
+
 </html>

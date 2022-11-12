@@ -6,6 +6,7 @@ use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\product\PaginationController;
+use App\Http\Controllers\cart\AddToCartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,5 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/product', [PaginationController::class, 'index'])->name('product');
+
+Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add-to-cart');

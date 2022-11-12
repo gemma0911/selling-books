@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\DB;
 class RegisterController extends Controller
 {
     //
-    public function getRegister(){
+    public function getRegister()
+    {
         return view('clients.register');
     }
-    public function postRegister(Request $request){
+    public function postRegister(Request $request)
+    {
 
         $this->validate(request(), [
             'email' => 'required|email',
