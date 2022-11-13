@@ -22,8 +22,9 @@ Route::get('/',function(){
     return view('clients.index');
 })->name('index');
 
+
 Route::get('/cart',function(){
-    return view('cart');
+    return view('clients.cart');
 })->name('cart');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');

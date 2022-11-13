@@ -18,20 +18,20 @@
                         @csrf
                         <div class="formsix-pos">
                             <div class="form-group i-email">
-                                <input type="email" name="email" class="form-control" required=""
-                                    id="email2" placeholder="Email Address *">
+                                <input type="email" name="email" class="form-control" id="email2"
+                                    placeholder="Email Address *">
                             </div>
                         </div>
                         <div class="formsix-e">
                             <div class="form-group i-password">
-                                <input type="password" name="password" class="form-control" required=""
-                                    id="password2" placeholder="Password *">
+                                <input type="password" name="password" class="form-control" id="password2"
+                                    placeholder="Password *">
                             </div>
                         </div>
                         <div class="formsix-e">
                             <div class="form-group i-password">
-                                <input type="password" name="password1" class="form-control" required=""
-                                    id="password2" placeholder="Password *">
+                                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation  "
+                                    placeholder="Password *">
                             </div>
                         </div>
                         <div class="login_remember_box">
@@ -50,6 +50,25 @@
                             <p>Don&rsquo;t have an account ? <a href="#"> Sign up </a> </p>
                         </div>
                     </form>
+                    @if (Session::has('R-error'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <strong>{{ Session::get('error') }}</strong>
+                        </div>
+                    @endif
+                    @if (Session::has('success'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <strong>{{ Session::get('success') }}</strong>
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
