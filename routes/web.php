@@ -8,6 +8,7 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\product\PaginationController;
 use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
+use App\Http\Controllers\cart\DeleteCartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +43,5 @@ Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 Route::get('/product', [PaginationController::class, 'index'])->name('product');
 
 Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add-to-cart');
+
+Route::get('/delete-to-cart', [DeleteCartController::class, 'DeleteToCart'])->name('deletetocart');

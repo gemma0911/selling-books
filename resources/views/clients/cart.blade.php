@@ -18,6 +18,24 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <script>
+        function deletetocart($idProduct) {
+            console.log($idProduct)
+            $.ajax({
+                url: '{{ route('deletetocart') }}',
+                type: "get",
+                dateType: "text",
+                data: {
+                    idProduct: $idProduct,
+                },
+            });
+            if ($.ajax) {
+                alert('xóa thanh cong');
+            }
+            window.location = "http://127.0.0.1:8000/cart";
+        }
+    </script>
 </head>
 
 <body>
@@ -33,53 +51,55 @@
                             <h5 class="mb-0">Cart - 2 items</h5>
                         </div>
                         <div class="card-body">
-                            @foreach ($product as $productCart )
-                            <div class="row">
-                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                    <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                                        data-mdb-ripple-color="light">
-                                        <img src="/assets/images/{{$productCart->images}}"
-                                            class="w-100" alt="Blue Jeans Jacket" />
-                                        <a href="#!">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)">
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                    <p><strong>{{$productCart->name}}</strong></p>
-                                    <p>{{$productCart->content}}</p>
-                                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2"
-                                        data-mdb-toggle="tooltip" title="Remove item">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                                        title="Move to the wish list">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                    <div class="d-flex mb-4" style="max-width: 300px">
-                                        <button class="btn btn-primary px-3 me-2"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <div class="form-outline">
-                                            <input id="form1" min="0" name="quantity" value="{{$productCart->number}}"
-                                                type="number" class="form-control" />
-                                            <label class="form-label" for="form1">Quantity</label>
+                            @foreach ($product as $productCart)
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light">
+                                            <img src="/assets/images/{{ $productCart->images }}" class="w-100"
+                                                alt="Blue Jeans Jacket" />
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)">
+                                                </div>
+                                            </a>
                                         </div>
-                                        <button class="btn btn-primary px-3 ms-2"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                            <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                        <p><strong>{{ $productCart->name }}</strong></p>
+                                        <p>{{ $productCart->content }}</p>
+                                        <button type="button" class="btn btn-primary btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            onclick="deletetocart({{ $productCart->idProduct }})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm mb-2"
+                                            data-mdb-toggle="tooltip" title="Move to the wish list">
+                                            <i class="fas fa-heart"></i>
                                         </button>
                                     </div>
-                                    <p class="text-start text-md-center">
-                                        <strong>$17.99</strong>
-                                    </p>
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                        <div class="d-flex mb-4" style="max-width: 300px">
+                                            <button class="btn btn-primary px-3 me-2"
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <div class="form-outline">
+                                                <input id="form1" min="0" name="quantity"
+                                                    value="{{ $productCart->number }}" type="number"
+                                                    class="form-control" />
+                                                <label class="form-label" for="form1">Quantity</label>
+                                            </div>
+                                            <button class="btn btn-primary px-3 ms-2"
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <p class="text-start text-md-center">
+                                            <strong>$17.99</strong>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr class="my-4" />
+                                <hr class="my-4" />
                             @endforeach
                         </div>
                     </div>
