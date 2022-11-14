@@ -7,6 +7,7 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\product\PaginationController;
 use App\Http\Controllers\cart\AddToCartController;
+use App\Http\Controllers\cart\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +27,7 @@ Route::get('/test',function(){
     return view('clients.test');
 })->name('test');
 
-Route::get('/cart',function(){
-    return view('clients.cart');
-})->name('cart');
+Route::get('/cart', [CartController::class, 'Cart'])->name('cart');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
