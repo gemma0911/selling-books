@@ -18,22 +18,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <script>
-        function addtocart($id) {
+        function addtocart($id, $idUser) {
             console.log($id)
             $.ajax({
-                url: '{{route('add-to-cart')}}',
+                url: '{{ route('add-to-cart') }}',
                 type: "get",
                 dateType: "text",
                 data: {
                     id: $id,
                 },
             });
-            if($.ajax) {
-                alert('them thanh cong');
+            if ($idUser) {
+                if ($.ajax) {
+                    alert('them thanh cong');
+                }
+            } else {
+                alert('vui lòng đăng nhập')
             }
         }
     </script>
+
 </head>
+
 <body>
     <header>
         @include('components.header')
@@ -59,7 +65,7 @@
                                             <span class="new-price">1</span>
                                         </div>
                                         <button class="btn btn-info btn-add-to-cart"
-                                            onclick="addtocart({{ $product->idProduct }})"><i
+                                            onclick="addtocart({{ $product->idProduct }},{{ session()->get('name') }})"><i
                                                 class="fas fa-shopping-cart"></i></button>
                                         <a class="btn btn-outline-info btn-detail">Xem chi tiết</a>
                                     </div>

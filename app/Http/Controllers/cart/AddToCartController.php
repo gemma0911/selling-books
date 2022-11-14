@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cart;
 
 use App\Http\Controllers\Controller;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class AddToCartController extends Controller
@@ -13,16 +14,16 @@ class AddToCartController extends Controller
 
         if($request->id)
         {
-            $count = DB::table('users')
-            ->join('cart', function($join){
-                $join->on('users.id', '=' ,'cart.idUser')
-                ->orOn('')
-                ->where('idProduct',14);
-            })->value('number');
+            $count = DB::table('cart')
+            ->where('idProduct',$request->id)
+            ->where('idUser',session()->get('idUser'))
+            ->value('number');
 
             if($count)
             {
-                $query = DB::table('cart')->where('idProduct',$request->get('id'))
+                $query = DB::table('cart')
+                ->where('idProduct',$request->get('id'))
+                ->where('idUser',session()->get('idUser'))
                 ->update(['number' => $count + 1]);
             } else {
                 $query = DB::table('cart')->insert(
@@ -30,6 +31,7 @@ class AddToCartController extends Controller
                         'idProduct' => $request->get('id'),
                         'idUser' => session()->get('idUser'),
                         'number' => 1,
+                        'create_at' => new DateTime(),
                     ]
                 );
             }
