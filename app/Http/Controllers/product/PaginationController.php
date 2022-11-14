@@ -10,7 +10,7 @@ class PaginationController extends Controller
 {
 
     public function index() {
-        $pagination['data']=PaginationModel::paginate(9);
+        $pagination['data']=PaginationModel::paginate(12);
         return view('clients.product',$pagination);
     }
 }
