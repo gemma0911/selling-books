@@ -55,7 +55,7 @@
                 <div class="product-group">
                     <div class="row">
                         @foreach ($data as $product)
-                            <div class="col-md-2 col-sm-10 col-12">
+                            <div class="col-md-3 col-sm-10 col-12">
                                 <div class="card card-product mb-3">
                                     <img class="card-img-top" src="/assets/images/{{ $product->images }}">
                                     <div class="card-body">

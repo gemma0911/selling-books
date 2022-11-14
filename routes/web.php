@@ -22,6 +22,9 @@ Route::get('/',function(){
     return view('clients.index');
 })->name('index');
 
+Route::get('/test',function(){
+    return view('clients.test');
+})->name('test');
 
 Route::get('/cart',function(){
     return view('clients.cart');
