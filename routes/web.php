@@ -21,7 +21,7 @@ use App\Http\Controllers\cart\DeleteCartController;
 */
 
 Route::get('/',function(){
-    return view('clients.index');
+    return view('template.index');
 })->name('index');
 
 Route::get('/test',function(){

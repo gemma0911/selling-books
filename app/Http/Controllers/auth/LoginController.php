@@ -16,7 +16,7 @@ class LoginController extends Controller
 
     public function getAuthLogin()
     {
-        return view('clients.login');
+        return view('template.client.login');
     }
 
     public function postAuthLogin(Request $request) {

@@ -33,7 +33,7 @@
             if ($.ajax) {
                 alert('xóa thanh cong');
             }
-            window.location = "http://127.0.0.1:8000/cart";
+            window.location = "{{route('cart')}}";
         }
     </script>
 </head>
@@ -72,7 +72,7 @@
                                             onclick="deletetocart({{ $productCart->idProduct }})">
                                             <i class="fas fa-trash"></i>
                                         </button>
-                                        <button type="button" class="btn btn-danger btn-sm mb-2"
+                                        <button type="button" class="btn btn-danger btn-sm mb-2"5
                                             data-mdb-toggle="tooltip" title="Move to the wish list">
                                             <i class="fas fa-heart"></i>
                                         </button>
@@ -80,13 +80,13 @@
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <div class="d-flex mb-4" style="max-width: 300px">
                                             <button class="btn btn-primary px-3 me-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                                 <i class="fas fa-minus"></i>
                                             </button>
                                             <div class="form-outline">
                                                 <input id="form1" min="0" name="quantity"
                                                     value="{{ $productCart->number }}" type="number"
-                                                    class="form-control" />
+                                                    class="form-control"  />
                                                 <label class="form-label" for="form1">Quantity</label>
                                             </div>
                                             <button class="btn btn-primary px-3 ms-2"

@@ -19,9 +19,127 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const inputPassword = document.getElementById("password");
+        const inputUsername = document.getElementById("username");
+        const iconLoading = document.getElementById("loading");
+
+        const onToggleTypePassword = () => {
+            togglePassword.classList.toggle("fa-eye-slash");
+
+            if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+            } else {
+                inputPassword.type = "password";
+            }
+        };
+
+        togglePassword.addEventListener("click", onToggleTypePassword);
+
+        // VALIDATION FORM LOGIN
+        const checkUsername = (username) => {
+            if (!username) return "Hãy nhập Username !";
+            else if (username.length < 5)
+                return "Username cần chưa tối thiểu 5 kí tự !";
+            else return true;
+        };
+        const checkPassword = (password) => {
+            if (!password) return "Hãy nhập Password !";
+            else if (password.length < 5)
+                return "Password cần chưa tối thiểu 5 kí tự !";
+            else return true;
+        };
+        const showError = (element, message) => {
+            element.style.display = "block";
+            element.innerHTML = message;
+            element.className = "message__error";
+        };
+
+        const hideError = (element) => {
+            element.style.display = "none";
+        };
+        const validation = (username, password) => {
+            const errorUsername = document.getElementById("errorUsername");
+            const errorPassword = document.getElementById("errorPassword");
+
+            // validation username;
+            let messageErrorUsername = checkUsername(username);
+            if (typeof messageErrorUsername === "string") {
+                showError(errorUsername, messageErrorUsername);
+            } else {
+                hideError(errorUsername);
+            }
+
+            // validation password;
+            let messageErrorPassword = checkPassword(password);
+            if (typeof messageErrorPassword === "string") {
+                showError(errorPassword, messageErrorPassword);
+            } else {
+                hideError(errorPassword);
+            }
+
+            if (messageErrorUsername === true && messageErrorPassword === true) {
+                return true;
+            }
+            return false;
+        };
+        const login = (username, password) => {
+            if (username === "admin" && password === "admin") {
+                window.location.assign("./dashboard.html");
+                return true;
+            }
+            return false;
+        };
+
+        const showLoading = () => {
+            iconLoading.style.display = "flex";
+        };
+        const hideLoading = () => {
+            iconLoading.style.display = "none";
+        };
+        const onSubmitForm = (form) => {
+            const username = form.username.value;
+            const password = form.password.value;
+            const checkValidation = validation(username, password);
+            if (checkValidation === true) {
+                showLoading();
+                setTimeout(() => {
+                    const checkLogin = login(username, password);
+                    if (checkLogin === false) {
+                        swal(
+                            "",
+                            "Tên đăng nhập hoặc mật khẩu không chính xác !",
+                            "error"
+                        );
+                    }
+                    hideLoading();
+                }, 1000);
+            }
+        };
+    </script>
 </head>
+<style>
+    .loading {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.479);
+    }
+
+    .loading img {
+        width: 7rem;
+    }
+</style>
 
 <body>
+    <div class="loading" id="loading" >
+        <img src="https://thumbs.gfycat.com/HighCorruptIsabellineshrike-max-1mb.gif" alt="loading">
+    </div>
     <header>
         @include('components.header')
     </header>
@@ -41,11 +159,11 @@
                             </div>
                         </div>
                         <h2>or</h2>
-                        <form method="POST" action="{{ route('login.post') }}">
+                        <form method="POST" class="form">
                             @csrf
                             <div class="formsix-pos">
                                 <div class="form-group i-email">
-                                    <input type="email" name="email" class="form-control" id="email2"
+                                    <input type="text" name="email" class="form-control" id="email2"
                                         placeholder="Email Address *">
                                 </div>
                             </div>
@@ -66,6 +184,7 @@
                             <div class="login_message">
                                 <p>Don&rsquo;t have an account ? <a href="#"> Sign up </a> </p>
                             </div>
+                            <p id="errorPassword"></p>
                         </form>
                         @if (Session::has('error'))
                             <div class="alert alert-danger alert-dismissible" role="alert">

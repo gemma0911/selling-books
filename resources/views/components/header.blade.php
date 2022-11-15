@@ -50,7 +50,7 @@
         </div>
     </nav>
 </div> --}}
-<div class="container mt-3" style="background-color: wheat">
+<div class="container mt-3" style="background-color: whitesmoke">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             {{-- <img src="" height="50px" width="50px" /> --}}
@@ -76,10 +76,10 @@
                     </div>
                 @else
                     <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             {{(session()->get('name'))}}
-                        </button>
+                            <i class="fas fa-user"></i></button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
