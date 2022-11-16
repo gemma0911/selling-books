@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll" style="height: 100px">
     <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logo.svg"
                 height="31" alt="logo" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -14,8 +14,13 @@
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#marketing">Resources</a>
                 </li>
             </ul>
-            <div class="d-flex ms-lg-4"><a class="btn btn-secondary-outline" href="#!">Sign In</a><a
-                    class="btn btn-warning ms-3" href="#!">Sign Up</a></div>
+            @if (empty(session()->get('name')))
+            <div class="d-flex ms-lg-4"><a class="btn btn-secondary-outline" href="{{ route('login.get') }}">Sign In</a><a
+                    class="btn btn-warning ms-3" href="{{ route('register.get') }}">Sign Up</a></div>
+            @else
+            <div class="d-flex ms-lg-4"><a class="btn btn-secondary-outline" href="{{ route('login.get') }}">{{session()->get('idUser')}}</a><a
+                class="btn btn-warning ms-3" href="{{ route('logout') }}">Logout</a></div>
+            @endif
         </div>
     </div>
 </nav>

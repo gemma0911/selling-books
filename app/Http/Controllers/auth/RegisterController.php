@@ -15,7 +15,7 @@ class RegisterController extends Controller
     //
     public function getRegister()
     {
-        return view('clients.register');
+        return view('template.client.register');
     }
 
     protected function validator(array $data)

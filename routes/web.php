@@ -9,6 +9,7 @@ use App\Http\Controllers\product\PaginationController;
 use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,16 +20,11 @@ use App\Http\Controllers\cart\DeleteCartController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',function(){
-    return view('template.index');
-})->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/test',function(){
     return view('clients.test');
 })->name('test');
-
-Route::get('/cart', [CartController::class, 'Cart'])->name('cart');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
@@ -36,11 +32,7 @@ Route::post('/register', [RegisterController::class, 'postRegister'])->name('reg
 Route::get('/login', [LoginController::class, 'getAuthLogin'])->name('login.get');
 Route::post('/login', [LoginController::class, 'postAuthLogin'])->name('login.post');
 
-Route::get('/home', [HomeController::class, 'index']);
-
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
-
-Route::get('/product', [PaginationController::class, 'index'])->name('product');
 
 Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add-to-cart');
 
