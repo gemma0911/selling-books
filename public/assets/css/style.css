@@ -593,3 +593,9 @@ input[type=range]::-webkit-slider-thumb {
     background-color: black;
     border: 1px solid #333;
 }
+
+.pagination .page-item :hover {
+    background-color: #000;
+    color: white;
+    border-radius: 2px;
+}

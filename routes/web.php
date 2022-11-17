@@ -10,7 +10,7 @@ use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\IndexController1;
+use App\Http\Controllers\AjaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +23,7 @@ use App\Http\Controllers\IndexController1;
 // */
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::get('/test', [IndexController1::class, 'index'])->name('test');
+Route::get('/test', [AjaxController::class, 'index'])->name('test');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');

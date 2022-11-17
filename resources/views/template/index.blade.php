@@ -58,7 +58,6 @@
                         $('#result').html(result);
                     }
                 });
-
             });
         });
     </script>
