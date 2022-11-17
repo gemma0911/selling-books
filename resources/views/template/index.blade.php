@@ -46,59 +46,26 @@
             }
         }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script language="javascript">
-        function load_ajax1() {
-            const k = document.getElementById('clickme1').value
-            $.ajax({
-                url: "http://127.0.0.1:8000/test?page=" + k,
-                success: function(result) {
-                    $('#result').html(result);
-                }
+        $(document).ready(function() {
+            $(".page-link").click(function() {
+                console.log($(this).html())
+                history.pushState({}, "", "http://127.0.0.1:8000?page=" + $(this).html());
+
+                $.ajax({
+                    url: "http://127.0.0.1:8000/test?page=" + $(this).html(),
+                    success: function(result) {
+                        $('#result').html(result);
+                    }
+                });
+
             });
-        }
-    </script>
-    <script language="javascript">
-        function load_ajax2() {
-            const k = document.getElementById('clickme2').value
-            $.ajax({
-                url: "http://127.0.0.1:8000/test?page=" + k,
-                success: function(result) {
-                    $('#result').html(result);
-                }
-            });
-        }
-    </script>
-    <script language="javascript">
-        function load_ajax3() {
-            const k = document.getElementById('clickme3').value
-            $.ajax({
-                url: "http://127.0.0.1:8000/test?page=" + k,
-                success: function(result) {
-                    $('#result').html(result);
-                }
-            });
-        }
-    </script>
-    <script language="javascript">
-        function load_ajax4() {
-            const k = document.getElementById('clickme4').value
-            $.ajax({
-                url: "http://127.0.0.1:8000/test?page=" + k,
-                success: function(result) {
-                    $('#result').html(result);
-                }
-            });
-        }
+        });
     </script>
 </head>
 
 <body>
     @include('template.component.header')
-    <input type="button" name="clickme1" id="clickme1" onclick="load_ajax1()" value="1" />
-    <input type="button" name="clickme2" id="clickme2" onclick="load_ajax2()" value="2" />
-    <input type="button" name="clickme3" id="clickme3" onclick="load_ajax3()" value="3" />
-    <input type="button" name="clickme4" id="clickme4" onclick="load_ajax4()" value="4" />
     {{-- <section class="pt-7" id="feature">
             <div class="container">
                 <div class="row align-items-center">

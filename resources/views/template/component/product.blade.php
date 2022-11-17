@@ -30,8 +30,22 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <nav aria-label="Page navigation">
-                        {!! $data->links() !!}
+                        <nav>
+                            <ul class="pagination">
+                                @for ($i = 1; $i <= $data->lastPage(); $i++)
+                                    <li class="page-item" aria-disabled="page">
+                                        <span class="page-link">{{$i}}</span>
+                                    </li>
+                                @endfor
+                            </ul>
+                        </nav>
                     </nav>
+                    {{-- {{$data->lastPage()}} --}}
+
+                    {{-- <input type="button" name="clickme1" id="clickme1" onclick="load_ajax1()" value="1" />
+                    <input type="button" name="clickme2" id="clickme2" onclick="load_ajax2()" value="2" />
+                    <input type="button" name="clickme3" id="clickme3" onclick="load_ajax3()" value="3" />
+                    <input type="button" name="clickme4" id="clickme4" onclick="load_ajax4()" value="4" /> --}}
                     {{-- <a name="page-link">1</a> --}}
                     {{-- <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span
                                 aria-hidden="true" class="font-weight-bold">&lt;</span> <span
