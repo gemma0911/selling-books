@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PaginationModel;
 
-class AjaxController extends Controller
+class PaginatisonController extends Controller
 {
     //
     // public function index(Request $request) {
