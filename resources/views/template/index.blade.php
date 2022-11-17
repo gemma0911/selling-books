@@ -25,12 +25,81 @@
 
     <link href="assets/css/theme.css" rel="stylesheet" />
 
+    <script>
+        function addtocart($id, $idUser) {
+            console.log($id)
+            $.ajax({
+                url: '{{ route('add-to-cart') }}',
+                type: "get",
+                dateType: "text",
+                data: {
+                    id: $id,
+                },
+            });
+            if ($idUser) {
+                if ($.ajax) {
+                    alert('them thanh cong');
+                }
+            } else {
+                alert('vui lòng đăng nhập')
+                window.location = "{{ route('index') }}";
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script language="javascript">
+        function load_ajax1() {
+            const k = document.getElementById('clickme1').value
+            $.ajax({
+                url: "http://127.0.0.1:8000/test?page=" + k,
+                success: function(result) {
+                    $('#result').html(result);
+                }
+            });
+        }
+    </script>
+    <script language="javascript">
+        function load_ajax2() {
+            const k = document.getElementById('clickme2').value
+            $.ajax({
+                url: "http://127.0.0.1:8000/test?page=" + k,
+                success: function(result) {
+                    $('#result').html(result);
+                }
+            });
+        }
+    </script>
+    <script language="javascript">
+        function load_ajax3() {
+            const k = document.getElementById('clickme3').value
+            $.ajax({
+                url: "http://127.0.0.1:8000/test?page=" + k,
+                success: function(result) {
+                    $('#result').html(result);
+                }
+            });
+        }
+    </script>
+    <script language="javascript">
+        function load_ajax4() {
+            const k = document.getElementById('clickme4').value
+            $.ajax({
+                url: "http://127.0.0.1:8000/test?page=" + k,
+                success: function(result) {
+                    $('#result').html(result);
+                }
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <main class="main" id="top">
-        @include('template.component.header')
-        {{-- <section class="pt-7" id="feature">
+    @include('template.component.header')
+    <input type="button" name="clickme1" id="clickme1" onclick="load_ajax1()" value="1" />
+    <input type="button" name="clickme2" id="clickme2" onclick="load_ajax2()" value="2" />
+    <input type="button" name="clickme3" id="clickme3" onclick="load_ajax3()" value="3" />
+    <input type="button" name="clickme4" id="clickme4" onclick="load_ajax4()" value="4" />
+    {{-- <section class="pt-7" id="feature">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-md-start text-center py-6">
@@ -49,9 +118,9 @@
             </div>
         </section> --}}
 
-        @include('template.component.product')
+    @include('template.component.product')
 
-        {{-- <section class="pt-5" id="validation">
+    {{-- <section class="pt-5" id="validation">
 
             <div class="container">
                 <div class="row">
@@ -79,7 +148,7 @@
 
         </section> --}}
 
-        {{-- <section class="pt-5" id="manager">
+    {{-- <section class="pt-5" id="manager">
 
             <div class="container">
                 <div class="row">
@@ -159,7 +228,7 @@
 
         </section> --}}
 
-        {{-- <section class="pt-5" id="marketing">
+    {{-- <section class="pt-5" id="marketing">
 
             <div class="container">
                 <h1 class="fw-bold fs-6 mb-3">Marketing Strategies</h1>
@@ -221,28 +290,28 @@
             </div>
         </section> --}}
 
-        <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <iframe class="rounded" style="width:100%;height:500px;"
-                        src="https://www.youtube.com/embed/_lhdhL4UDIo" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
+    <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <iframe class="rounded" style="width:100%;height:500px;" src="https://www.youtube.com/embed/_lhdhL4UDIo"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
+    </div>
 
-        <script src="vendors/@popperjs/popper.min.js"></script>
-        <script src="vendors/bootstrap/bootstrap.min.js"></script>
-        <script src="vendors/is/is.min.js"></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-        <script src="vendors/fontawesome/all.min.js"></script>
-        <script src="assets/js/theme.js"></script>
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
-            rel="stylesheet">
-            <script src="{{asset('assets/js/js.js')}}"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
+        rel="stylesheet">
+    <script src="{{ asset('assets/js/js.js') }}"></script>
 </body>
 
 </html>

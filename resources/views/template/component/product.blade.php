@@ -32,6 +32,7 @@
                     <nav aria-label="Page navigation">
                         {!! $data->links() !!}
                     </nav>
+                    {{-- <a name="page-link">1</a> --}}
                     {{-- <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span
                                 aria-hidden="true" class="font-weight-bold">&lt;</span> <span
                                 class="sr-only">Previous</span> </a> </li>
@@ -141,15 +142,17 @@
             </div>
         </div>
         <div id="products">
-            <div class="row mx-0">
+            <div class="row mx-0" id="result">
                 @foreach ($data as $product)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6" id="result">
                         <div class="card d-flex flex-column align-items-center">
-                            <div class="product-name">Torn Jeans for Men</div>
+                            <div class="product-name">{{ $product->name }}</div>
                             <div class="card-img"> <img src="/assets/images/{{ $product->images }}" alt="">
                             </div>
                             <div class="card-body pt-5">
-                                <div class="text-muted text-center mt-auto">Available Colors</div>
+                                <div class="text-muted text-center mt-auto"><button
+                                        onclick="addtocart({{ $product->idProduct }},{{ session()->get('name') }})"
+                                        style="background-color: white; border: none;">Add to cart</button></div>
                                 <div class="d-flex align-items-center justify-content-center colors my-2">
                                     <div class="btn-group" data-toggle="buttons" data-tooltip="tooltip"
                                         data-placement="right" title="choose color"> <label
@@ -162,11 +165,12 @@
                                             class="btn btn-orange form-check-label"> <input class="form-check-input"
                                                 type="radio" autocomplete="off"> </label> <label
                                             class="btn btn-pink form-check-label"> <input class="form-check-input"
-                                                type="radio" autocomplete="off"> </label> </div>
+                                                type="radio" autocomplete="off"> </label>
+                                    </div>
                                 </div>
                                 <div class="d-flex align-items-center price">
                                     <div class="del mr-2"><span class="text-dark">5500 uah</span></div>
-                                    <div class="font-weight-bold">4500 uah</div>
+                                    <div class="font-weight-bold">{{ $product->price }}</div>
                                 </div>
                             </div>
                         </div>

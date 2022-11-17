@@ -10,6 +10,7 @@ use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\IndexController1;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +20,10 @@ use App\Http\Controllers\IndexController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+// */
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::get('/test',function(){
-    return view('clients.test');
-})->name('test');
+Route::get('/test', [IndexController1::class, 'index'])->name('test');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
