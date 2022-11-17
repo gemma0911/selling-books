@@ -13,7 +13,7 @@ class PaginatisonController extends Controller
     //     return view('template.component.result',$pagination);
     // }
     public function index(Request $request){
-        $pagination['data']=PaginationModel::paginate(6);
+        $pagination['data']=PaginationModel::paginate(9);
         return view('template.component.result',$pagination);
     }
 }

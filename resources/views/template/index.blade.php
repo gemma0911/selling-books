@@ -42,7 +42,7 @@
                 }
             } else {
                 alert('vui lòng đăng nhập')
-                window.location = "{{ route('index') }}";
+                window.location = "{{ route('login.get') }}";
             }
         }
     </script>

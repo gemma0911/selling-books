@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     //
     public function index() {
-        $pagination['data']=PaginationModel::paginate(6);
+        $pagination['data']=PaginationModel::paginate(9);
         return view('template.index',$pagination);
     }
 }
