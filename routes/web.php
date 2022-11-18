@@ -11,6 +11,7 @@ use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PaginatisonController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ use App\Http\Controllers\PaginatisonController;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/product', [PaginatisonController::class, 'index'])->name('product');
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');

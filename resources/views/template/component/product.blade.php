@@ -34,28 +34,12 @@
                             <ul class="pagination">
                                 @for ($i = 1; $i <= $data->lastPage(); $i++)
                                     <li class="page-item" aria-disabled="page">
-                                        <span class="page-link">{{$i}}</span>
+                                        <span class="page-link">{{ $i }}</span>
                                     </li>
                                 @endfor
                             </ul>
                         </nav>
                     </nav>
-                    {{-- {{$data->lastPage()}} --}}
-
-                    {{-- <input type="button" name="clickme1" id="clickme1" onclick="load_ajax1()" value="1" />
-                    <input type="button" name="clickme2" id="clickme2" onclick="load_ajax2()" value="2" />
-                    <input type="button" name="clickme3" id="clickme3" onclick="load_ajax3()" value="3" />
-                    <input type="button" name="clickme4" id="clickme4" onclick="load_ajax4()" value="4" /> --}}
-                    {{-- <a name="page-link">1</a> --}}
-                    {{-- <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span
-                                aria-hidden="true" class="font-weight-bold">&lt;</span> <span
-                                class="sr-only">Previous</span> </a> </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">..</a></li>
-                    <li class="page-item"><a class="page-link" href="#">24</a></li>
-                    <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span
-                                aria-hidden="true" class="font-weight-bold">&gt;</span> <span
-                                class="sr-only">Next</span> </a> </li> --}}
                 </ul>
             </nav>
         </div>
@@ -66,12 +50,14 @@
                 <div class="form-group text-center">
                     <div class="btn-group" data-toggle="buttons"> <label class="btn btn-success form-check-label">
                             <input class="form-check-input" type="radio"> Reset </label> <label
-                            class="btn btn-success form-check-label active"> <input class="form-check-input"
-                                type="radio" checked> Apply </label> </div>
+                            class="btn btn-success form-check-label "> <input class="form-check-input"
+                                onclick="search()" type="radio"> Apply </label> </div>
                 </div>
-                <div> <label class="tick">New <input type="checkbox" checked="checked"> <span class="check"></span>
-                    </label> </div>
-                <div> <label class="tick">Sale <input type="checkbox"> <span class="check"></span> </label> </div>
+                <div>
+                    <label class="tick">New <input type="checkbox" checked="checked"> <span class="check"></span>
+                    </label>
+                </div>
+                <div> <label class="tick">Sale <input type="checkbox" id="checkbox-number"> <span class="check"></span> </label> </div>
             </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Outerwear <button class="btn ml-auto"
