@@ -54,10 +54,10 @@
                                 onclick="search()" type="radio"> Apply </label> </div>
                 </div>
                 <div>
-                    <label class="tick">New <input type="checkbox" checked="checked"> <span class="check"></span>
+                    <label class="tick">New <input type="checkbox" id="checkbox-new"> <span class="check"></span>
                     </label>
                 </div>
-                <div> <label class="tick">Sale <input type="checkbox" id="checkbox-number"> <span class="check"></span> </label> </div>
+                <div> <label class="tick">Sale <input type="checkbox" id="checkbox-sale"> <span class="check"></span> </label> </div>
             </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Outerwear <button class="btn ml-auto"

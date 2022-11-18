@@ -31,10 +31,41 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="assets/css/theme.css" rel="stylesheet" />
-
+    <script>
+        const onSubmitForm = (form) => {
+            if (true) {
+                document.getElementById("loading").style.display = "flex";
+                setTimeout(() => {
+                    const hideLoading = () => {
+                        iconLoading.style.display = "none";
+                    };
+                }, 1000);
+            }
+        };
+    </script>
 </head>
+<style>
+    .loading {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.479);
+    }
+
+    .loading img {
+        width: 7rem;
+        margin-bottom: 600px
+    }
+</style>
 
 <body>
+    <div class="loading" id="loading">
+        <img src="https://thumbs.gfycat.com/HighCorruptIsabellineshrike-max-1mb.gif" alt="loading">
+    </div>
     <main class="main" id="top">
         @include('template.component.header')
 
@@ -54,7 +85,7 @@
                                 </div>
                             </div>
                             <h2>or</h2>
-                            <form method="POST" class="form">
+                            <form method="POST" class="form" onsubmit="onSubmitForm(this)">
                                 @csrf
                                 <div class="formsix-pos">
                                     <div class="form-group i-email">
@@ -135,4 +166,5 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
             rel="stylesheet">
 </body>
+
 </html>
