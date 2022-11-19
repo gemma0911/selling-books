@@ -14,6 +14,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="{{asset("ajax/index.js")}}"></script>
+    <script src="{{asset("ajax/checkbox.js")}}"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
@@ -46,52 +48,8 @@
             }
         }
     </script>
-    <script language="javascript">
-        $(document).ready(function() {
-            $(".page-link").click(function() {
-                console.log($(this).html())
-                history.pushState({}, "", "http://127.0.0.1:8000?page=" + $(this).html());
-                $.ajax({
-                    url: "http://127.0.0.1:8000/product?page=" + $(this).html(),
-                    success: function(result) {
-                        $('#result').html(result);
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        function search() {
-            const checkbox1 = document.getElementById('checkbox-new')
-            const checkbox2 = document.getElementById('checkbox-sale')
-            if (checkbox1.checked && !checkbox2.checked) {
-                history.pushState({}, "", "http://127.0.0.1:8000?new=new");
-                $.ajax({
-                    url: "http://127.0.0.1:8000/search?new=new",
-                    success: function(result) {
-                        $('#result').html(result);
-                    }
-                });
-            } else if(checkbox2.checked && !checkbox1.checked){
-                history.pushState({}, "", "http://127.0.0.1:8000?sale=sale");
-                $.ajax({
-                    url: "http://127.0.0.1:8000/search?sale=sale",
-                    success: function(result) {
-                        $('#result').html(result);
-                    }
-                });
-            } else if(checkbox1.checked && checkbox2.checked) {
-                history.pushState({}, "", "http://127.0.0.1:8000?sale=sale&&new=new");
-                $.ajax({
-                    url: "http://127.0.0.1:8000/search?sale=sale&&new=new",
-                    success: function(result) {
-                        $('#result').html(result);
-                    }
-                });
-            }
-        }
-    </script>
 </head>
+
 <body>
     @include('template.component.header')
     {{-- <section class="pt-7" id="feature">
