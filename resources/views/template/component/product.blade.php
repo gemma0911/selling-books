@@ -66,25 +66,28 @@
                         aria-controls="inner-box" id="out" onclick="outerFilter()"> <span
                             class="fas fa-plus"></span> </button> </div>
                 <div id="inner-box" class="collapse mt-2 mr-1">
-                    <div class="my-1"> <label class="tick">Manga - LiveNovel <input type="checkbox" id="category" value="1">
-                        <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Văn học <input type="checkbox" id="category" value="2">
+                    <div class="my-1"> <label class="tick">Manga - LiveNovel <input type="checkbox" name="a1"
+                                value="1">
                             <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Kinh tế <input type="checkbox" id="category" value="3"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox" id="category" value="4"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Nuôi dạy con <input type="checkbox" id="category" value="5"> <span
-                                class="check"></span>
+                    <div class="my-1"> <label class="tick">Văn học <input type="checkbox" name="a1"
+                                value="2">
+                            <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Kinh tế <input type="checkbox" name="a1"
+                                value="3"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox"
+                                name="a1" value="4"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Nuôi dạy con <input type="checkbox" name="a1"
+                                value="5"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Sách thiếu nhi <input type="checkbox" id="category" value="6"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Tiểu sử hồi kí <input type="checkbox" id="category" value="7"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Sách giáo khoa - Tham khảo <input type="checkbox" id="category" value="8">
+                    <div class="my-1"> <label class="tick">Sách thiếu nhi <input type="checkbox" name="a1"
+                                value="6"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Tiểu sử hồi kí <input type="checkbox" name="a1"
+                                value="7"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Sách giáo khoa - Tham khảo <input type="checkbox"
+                                name="a1" value="8">
                             <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Sách ngoại ngữ <input type="checkbox" id="category" value="9"> <span
-                                class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Sách ngoại ngữ <input type="checkbox" name="a1"
+                                value="9"> <span class="check"></span> </label> </div>
 
                 </div>
             </div>
