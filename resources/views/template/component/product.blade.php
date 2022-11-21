@@ -108,52 +108,6 @@
                                 class="check"></span> </label> </div>
                 </div>
             </div>
-            <div class="box border-bottom">
-                <div class="box-label text-uppercase d-flex align-items-center">price <button class="btn ml-auto"
-                        type="button" data-toggle="collapse" data-target="#price" aria-expanded="false"
-                        aria-controls="price"><span class="fas fa-plus"></span></button> </div>
-                <div class="collapse" id="price">
-                    <div class="middle">
-                        <div class="multi-range-slider"> <input type="range" id="input-left" min="0"
-                                max="100" value="10"> <input type="range" id="input-right"
-                                min="0" max="100" value="50">
-                            <div class="slider">
-                                <div class="track"></div>
-                                <div class="range"></div>
-                                <div class="thumb left"></div>
-                                <div class="thumb right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-2">
-                        <div> <span id="amount-left" class="font-weight-bold"></span> uah </div>
-                        <div> <span id="amount-right" class="font-weight-bold"></span> uah </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box border-bottom">
-                <div class="box-label text-uppercase d-flex align-items-center">price <button class="btn ml-auto"
-                        type="button" data-toggle="collapse" data-target="#price" aria-expanded="false"
-                        aria-controls="price"><span class="fas fa-plus"></span></button> </div>
-                <div class="collapse" id="price">
-                    <div class="middle">
-                        <div class="multi-range-slider"> <input type="range" id="input-left" min="0"
-                                max="100" value="10"> <input type="range" id="input-right"
-                                min="0" max="100" value="50">
-                            <div class="slider">
-                                <div class="track"></div>
-                                <div class="range"></div>
-                                <div class="thumb left"></div>
-                                <div class="thumb right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-2">
-                        <div> <span id="amount-left" class="font-weight-bold"></span> uah </div>
-                        <div> <span id="amount-right" class="font-weight-bold"></span> uah </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div id="products">
             <div class="row mx-0" id="result">

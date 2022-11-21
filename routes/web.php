@@ -9,9 +9,12 @@ use App\Http\Controllers\product\PaginationController;
 use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PaginatisonController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SaleAndNewController;
+use App\Http\Controllers\cart\EditCartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +27,19 @@ use App\Http\Controllers\SearchController;
 // */
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
+Route::get('/cart', [CartController::class, 'Cart'])->name('cart');
 Route::get('/product', [PaginatisonController::class, 'index'])->name('product');
 
-Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/search', [CategoryController::class, 'index'])->name('search');
+Route::get('/search1', [CategoryController::class, 'index1'])->name('category');
+Route::get('/search2', [CategoryController::class, 'index2'])->name('category');
+Route::get('/search3', [CategoryController::class, 'index3'])->name('category');
+Route::get('/search4', [CategoryController::class, 'index4'])->name('category');
+
+Route::get('/search5', [SaleAndNewController::class, 'sale']);
+Route::get('/search6', [SaleAndNewController::class, 'new']);
+Route::get('/search7', [SaleAndNewController::class, 'saleandnew']);
+
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
@@ -37,5 +50,5 @@ Route::post('/login', [LoginController::class, 'postAuthLogin'])->name('login.po
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add-to-cart');
-
 Route::get('/delete-to-cart', [DeleteCartController::class, 'DeleteToCart'])->name('deletetocart');
+Route::get('/edit-to-cart', [EditCartController::class, 'EditToCart'])->name('edit-to-cart');
