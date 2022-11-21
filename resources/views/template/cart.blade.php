@@ -201,9 +201,9 @@
                         <table class="table table-borderless table-shopping-cart">
                             <thead class="text-muted">
                                 <tr class="small text-uppercase">
-                                    <th scope="col">Product</th>
-                                    <th scope="col" width="120">Quantity</th>
-                                    <th scope="col" width="120">Price</th>
+                                    <th scope="col">Sản phẩm</th>
+                                    <th scope="col" width="120">Số lượng</th>
+                                    <th scope="col" width="120">Giá</th>
                                     <th scope="col" class="text-right d-none d-md-block" width="200"></th>
                                 </tr>
                             </thead>
@@ -235,12 +235,12 @@
                                                 </div>
                                             </td>
                                             <td class="text-right d-none d-md-block">
-                                                <button class="btn btn-light"
+                                                <button class="btn btn-danger"
                                                     onclick="edittocart({{ $products->idProduct }})"> <i
                                                         class="bi bi-pencil-square"></i></button>
                                                 <button id="deletecart"
                                                     onclick="deletetocart({{ $products->idProduct }})"
-                                                    class="btn btn-light"> Remove</button>
+                                                    class="btn btn-danger"> <i class="bi bi-trash"></i></button>
                                             </td>
                                         </tr>
                                     </div>
@@ -265,15 +265,17 @@
                 <div class="card">
                     <div class="card-body">
                         <dl class="dlist-align">
-                            <dt>Total price:</dt>
+                            <dt>Tổng tiền:</dt>
                             <dd class="text-right ml-3"><div id="totalnumber">
                                 @if (!empty($delete))
                                 {{$delete}}
+                                @else
+                                {{$total}}
                                 @endif
                                 </div></dd>
                         </dl>
                         <dl class="dlist-align">
-                            <dt>Discount:</dt>
+                            <dt>Tiền giảm giá:</dt>
                             <dd class="text-right text-danger ml-3">- $10.00</dd>
                         </dl>
                         <dl class="dlist-align">
