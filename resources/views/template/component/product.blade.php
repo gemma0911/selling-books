@@ -4,27 +4,7 @@
                 data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false"
                 aria-label="Toggle navigation" onclick="chnageIcon()" id="icon"> <span
                     class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="mynav">
-                <ul class="navbar-nav d-lg-flex align-items-lg-center">
-                    <li class="nav-item active"> <select name="sort" id="sort">
-                            <option value="" hidden selected>Sort by</option>
-                            <option value="price">Price</option>
-                            <option value="popularity">Popularity</option>
-                            <option value="rating">Rating</option>
-                        </select> </li>
-                    <li class="nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3">
-                        <div class="d-inline-flex align-items-center mx-lg-2" id="select2">
-                            <div class="pl-2">Products:</div> <select name="pro" id="pro">
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                        <div class="font-weight-bold mx-2 result">18 from 200</div>
-                    </li>
-                    <li class="nav-item d-lg-none d-inline-flex"> </li>
-                </ul>
-            </div>
+
         </nav>
         <div class="ml-auto mt-3 mr-2">
             <nav aria-label="Page navigation example">
@@ -74,8 +54,8 @@
                             <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Kinh tế <input type="checkbox" name="a1"
                                 value="3"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox"
-                                name="a1" value="4"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox" name="a1"
+                                value="4"> <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Nuôi dạy con <input type="checkbox" name="a1"
                                 value="5"> <span class="check"></span>
                         </label> </div>
@@ -96,16 +76,11 @@
                         type="button" data-toggle="collapse" data-target="#inner-box2" aria-expanded="false"
                         aria-controls="inner-box2"><span class="fas fa-plus"></span></button> </div>
                 <div id="inner-box2" class="collapse mt-2 mr-1">
-                    <div class="my-1"> <label class="tick">50.000 - 100.000 <input type="checkbox">
-                            <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">100.000 - 250.000 <input type="checkbox"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">250.000 - 500.000 <input type="checkbox"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">500.000 - 750.000 <input type="checkbox"> <span
-                                class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">750.000 -1.000.000 <input type="checkbox"> <span
-                                class="check"></span> </label> </div>
+                    @foreach ($price as $prices)
+                        <div class="my-1"> <label class="tick">{{ $prices->start }} - {{ $prices->end }}<input
+                                    type="checkbox" name="idPrice" value="{{ $prices->idPrice }}">
+                                <span class="check"></span> </label> </div>
+                    @endforeach
                 </div>
             </div>
         </div>

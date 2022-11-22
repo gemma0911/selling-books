@@ -9,7 +9,7 @@ class SaleAndNewController extends Controller
     public function sale(Request $request)
     {
         $productSearch['data'] = DB::table('product')->join('sale', 'sale.idSale', '=', 'product.idSale')
-        ->where('sale.idSale','>',0)
+        ->where('sale.numberSale','>',0)
         ->select('product.images', 'product.name', 'product.content', 'product.price','product.idProduct')->paginate(9);
         return view('template.component.result', $productSearch);
     }
@@ -21,7 +21,7 @@ class SaleAndNewController extends Controller
     public function saleandnew(Request $request)
     {
         $productSearch['data'] = DB::table('product')->join('sale', 'sale.idSale', '=', 'product.idSale')
-        ->where('sale.idSale','>',0)->where('product.new','>',0)
+        ->where('sale.numberSale','>',0)->where('product.new','>',0)
         ->select('product.images', 'product.name', 'product.content', 'product.price','product.idProduct')
         ->paginate(9);
         return view('template.component.result', $productSearch);

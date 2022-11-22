@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
         if ($request->new && $request->sale && $request->idCategory) {
             $productSearch['data'] = DB::table('product')->join('sale', 'sale.idSale', '=', 'product.idSale')
-            ->where('sale.idSale','>',0)->where('product.idCategory',$request->idCategory)->where('product.new','>',0)
+            ->where('sale.numberSale','>',0)->where('product.idCategory',$request->idCategory)->where('product.new','>',0)
             ->select('product.images', 'product.name', 'product.content', 'product.price','product.idProduct')->paginate(9);
             return view('template.component.result', $productSearch);
         }
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     {
         $idCategory = $request->idCategory;
         $productSearch['data'] = DB::table('product')->join('sale', 'sale.idSale', '=', 'product.idSale')
-        ->where('sale.idSale','>',0)->where('product.idCategory',$request->idCategory)
+        ->where('sale.numberSale','>',0)->where('product.idCategory',$request->idCategory)
         ->select('product.images', 'product.name', 'product.content', 'product.price','product.idProduct')->paginate(9);
         return view('template.component.result', $productSearch);
     }

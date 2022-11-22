@@ -15,6 +15,7 @@ use App\Http\Controllers\PaginatisonController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SaleAndNewController;
 use App\Http\Controllers\cart\EditCartController;
+use App\Http\Controllers\PriceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,11 @@ Route::get('/search5', [SaleAndNewController::class, 'sale']);
 Route::get('/search6', [SaleAndNewController::class, 'new']);
 Route::get('/search7', [SaleAndNewController::class, 'saleandnew']);
 
+Route::get('/price1', [PriceController::class, 'index1'])->name('price');
+Route::get('/price2', [PriceController::class, 'index2'])->name('price');
+Route::get('/price3', [PriceController::class, 'index3'])->name('price');
+Route::get('/price4', [PriceController::class, 'index4'])->name('price');
+Route::get('/price5', [PriceController::class, 'index5'])->name('price');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
