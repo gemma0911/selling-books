@@ -15,6 +15,7 @@ use App\Http\Controllers\PaginatisonController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SaleAndNewController;
 use App\Http\Controllers\cart\EditCartController;
+use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,4 @@ Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add
 Route::get('/delete-to-cart', [DeleteCartController::class, 'DeleteToCart'])->name('deletetocart');
 Route::get('/edit-to-cart', [EditCartController::class, 'EditToCart'])->name('edit-to-cart');
 
-Route::get('/productdetail',function(){
-    return view("template.productdetail");
-});
+Route::get('/product-detail', [DetailProductController::class, 'index'])->name('productdetail');

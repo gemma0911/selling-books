@@ -1,5 +1,5 @@
 @foreach ($data as $product)
-    <div class="col-lg-4 col-md-6" id="result">
+    <div class="col-lg-4 col-md-6" onclick="detail({{$product->idProduct}})">
         <div class="card d-flex flex-column align-items-center">
             <div class="product-name">{{ $product->name }}</div>
             <div class="card-img"> <img src="/assets/images/{{ $product->images }}" alt="">

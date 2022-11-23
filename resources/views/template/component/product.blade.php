@@ -74,8 +74,8 @@
                             <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Kinh tế <input type="checkbox" name="a1"
                                 value="3"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox"
-                                name="a1" value="4"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox" name="a1"
+                                value="4"> <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Nuôi dạy con <input type="checkbox" name="a1"
                                 value="5"> <span class="check"></span>
                         </label> </div>
@@ -97,8 +97,9 @@
                         aria-controls="inner-box2"><span class="fas fa-plus"></span></button> </div>
                 <div id="inner-box2" class="collapse mt-2 mr-1">
                     @foreach ($price as $prices)
-                    <div class="my-1"> <label class="tick">{{$prices->start}} - {{$prices->end}}<input type="checkbox" name="idPrice" value="{{$prices->idPrice}}">
-                        <span class="check"></span> </label> </div>
+                        <div class="my-1"> <label class="tick">{{ $prices->start }} - {{ $prices->end }}<input
+                                    type="checkbox" name="idPrice" value="{{ $prices->idPrice }}">
+                                <span class="check"></span> </label> </div>
                     @endforeach
                 </div>
             </div>
@@ -106,7 +107,7 @@
         <div id="products">
             <div class="row mx-0" id="result">
                 @foreach ($data as $product)
-                    <div class="col-lg-4 col-md-6" id="result">
+                    <div class="col-lg-4 col-md-6" onclick="detail({{$product->idProduct}})">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="product-name">{{ $product->name }}</div>
                             <div class="card-img"> <img src="/assets/images/{{ $product->images }}" alt="">
@@ -114,7 +115,7 @@
                             <div class="card-body pt-5">
                                 <div class="text-muted text-center mt-auto"><button
                                         onclick="addtocart({{ $product->idProduct }},{{ session()->get('name') }})"
-                                        style="background-color: white; border: none;">Add to cart</button></div>
+                                        style="background-color: white; border: none;">Thêm vào giỏ hàng</button></div>
                                 <div class="d-flex align-items-center justify-content-center colors my-2">
                                     <div class="btn-group" data-toggle="buttons" data-tooltip="tooltip"
                                         data-placement="right" title="choose color"> <label
