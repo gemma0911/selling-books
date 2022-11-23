@@ -58,3 +58,7 @@ Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 Route::get('/add-to-cart', [AddToCartController::class, 'AddToCart'])->name('add-to-cart');
 Route::get('/delete-to-cart', [DeleteCartController::class, 'DeleteToCart'])->name('deletetocart');
 Route::get('/edit-to-cart', [EditCartController::class, 'EditToCart'])->name('edit-to-cart');
+
+Route::get('/productdetail',function(){
+    return view("template.productdetail");
+});
