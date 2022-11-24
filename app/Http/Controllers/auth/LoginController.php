@@ -43,8 +43,15 @@ class LoginController extends Controller
 
             if( Auth::attempt(['email' => $email, 'password' =>$password])) {
                 $query = DB::table('users')->where('email',$request->get('email'))->value('id');
-                Session::put('name',$query);
-                Session::put('idUser',$query);
+                $query2 = DB::table('users')->where('email',$request->get('email'))->value('level');
+                if($query2==1){
+                    Session::put('admin',$query);
+                    return redirect('/admin');
+                } else if($query2==3){
+                    Session::put('name',$query);
+                    Session::put('idUser',$query);
+                    return redirect('/');
+                }
                 return redirect('/');
             } else {
                 Session::flash('error', 'Email hoặc mật khẩu không đúng!');

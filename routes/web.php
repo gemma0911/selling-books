@@ -1,22 +1,20 @@
 <?php
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TestController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LogoutController;
-use App\Http\Controllers\product\PaginationController;
 use App\Http\Controllers\cart\AddToCartController;
 use App\Http\Controllers\cart\CartController;
 use App\Http\Controllers\cart\DeleteCartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PaginatisonController;
-use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SaleAndNewController;
 use App\Http\Controllers\cart\EditCartController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
+use App\Http\Controllers\admin\AddProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +59,15 @@ Route::get('/delete-to-cart', [DeleteCartController::class, 'DeleteToCart'])->na
 Route::get('/edit-to-cart', [EditCartController::class, 'EditToCart'])->name('edit-to-cart');
 
 Route::get('/product-detail', [DetailProductController::class, 'index'])->name('productdetail');
+
+Route::get('/admin',function(){
+    return view("template.admin.index");
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/',function(){
+        return view("template.admin.index");
+    });
+    Route::get("/add",[AddProductController::class,'index'])->name('add');
+    Route::get("/add-product",[AddProductController::class,'addProduct'])->name('add-product');
+});

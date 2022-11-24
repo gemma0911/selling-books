@@ -51,15 +51,6 @@
     </script>
     <script>
         function detail(idProduct) {
-            // $.ajax({
-            //     console.log(idProduct)
-            //     url: '{{route('productdetail')}}',
-            //     type: "get",
-            //     dateType: "text",
-            //     data: {
-            //         idProduct: idProduct,
-            //     },
-            // });
             window.location = '/product-detail?idProduct='+idProduct
         }
     </script>

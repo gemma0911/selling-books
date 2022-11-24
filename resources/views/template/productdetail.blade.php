@@ -28,6 +28,27 @@
                 main_prodcut_image.src = element.src;
             }
         </script>
+        <script>
+            function addtocart($id, $idUser) {
+                console.log($id)
+                $.ajax({
+                    url: '{{ route('add-to-cart') }}',
+                    type: "get",
+                    dateType: "text",
+                    data: {
+                        id: $id,
+                    },
+                });
+                if ($idUser) {
+                    if ($.ajax) {
+                        alert('them thanh cong');
+                    }
+                } else {
+                    alert('vui lòng đăng nhập')
+                    window.location = "{{ route('login.get') }}";
+                }
+            }
+        </script>
     </head>
     <style>
         body {
@@ -242,33 +263,22 @@
                     <div class="col-md-6">
                         <div class="p-3 right-side">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3>{{$data->name}}</h3> <span class="heart"><i class='bx bx-heart'></i></span>
+                                <h3>{{ $data->name }}</h3> <span class="heart"><i class='bx bx-heart'></i></span>
                             </div>
                             <div class="mt-2 pr-3 content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt
                                     ut labore et dolore magna aliqua</p>
                             </div>
-                            <h3>{{$data->price}}</h3>
+                            <h4>Giá : {{ $data->price }} Vnd</h4>
                             <div class="ratings d-flex flex-row align-items-center">
                                 <div class="d-flex flex-row"> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i
                                         class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i>
                                 </div>
-                                <span>{{$data->buy}} người mua</span>
                             </div>
-                            <div class="mt-5"> <span class="fw-bold">Color</span>
-                                <div class="colors">
-                                    <ul id="marker">
-                                        <li id="marker-1"></li>
-                                        <li id="marker-2"></li>
-                                        <li id="marker-3"></li>
-                                        <li id="marker-4"></li>
-                                        <li id="marker-5"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Buy
-                                    Now</button> <button class="btn btn-dark">Add to Basket</button> </div>
+                            <h4 class="">{{$data->buy}} Người mua</h4>
+                            <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Thanh
+                                    toán</button> <button onclick="addtocart({{ $data->idProduct }},{{ session()->get('name') }})" class="btn btn-dark">Giỏ hàng</button> </div>
                         </div>
                     </div>
                 </div>
