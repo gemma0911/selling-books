@@ -45,6 +45,8 @@ Route::get('/price2', [PriceController::class, 'index2'])->name('price');
 Route::get('/price3', [PriceController::class, 'index3'])->name('price');
 Route::get('/price4', [PriceController::class, 'index4'])->name('price');
 Route::get('/price5', [PriceController::class, 'index5'])->name('price');
+Route::get('/price6', [PriceController::class, 'index6'])->name('price');
+Route::get('/price7', [PriceController::class, 'index7'])->name('price');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');

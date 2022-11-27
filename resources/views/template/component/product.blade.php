@@ -4,44 +4,11 @@
                 data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false"
                 aria-label="Toggle navigation" onclick="chnageIcon()" id="icon"> <span
                     class="navbar-toggler-icon"></span> </button>
-            {{-- <div class="collapse navbar-collapse" id="mynav">
-                <ul class="navbar-nav d-lg-flex align-items-lg-center">
-                    <li class="nav-item active"> <select name="sort" id="sort">
-                            <option value="" hidden selected>Sort by</option>
-                            <option value="price">Price</option>
-                            <option value="popularity"></option>Popularity</option>
-                            <option value="rating">Rating</option>
-                        </select> </li>
-                    <li class="nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3">
-                        <div class="d-inline-flex align-items-center mx-lg-2" id="select2">
-                            <div class="pl-2">Products:</div> <select name="pro" id="pro">
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                            </select>
-                        </div>
-                        <div class="font-weight-bold mx-2 result">18 from 200</div>
-                    </li>
-                    <li class="nav-item d-lg-none d-inline-flex"> </li>
-                </ul>
-            </div> --}}
         </nav>
-        <div class="ml-auto mt-3 mr-2">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <nav aria-label="Page navigation">
-                        <nav>
-                            <ul class="pagination">
-                                @for ($i = 1; $i <= $data->lastPage(); $i++)
-                                    <li class="page-item" aria-disabled="page">
-                                        <span class="page-link">{{ $i }}</span>
-                                    </li>
-                                @endfor
-                            </ul>
-                        </nav>
-                    </nav>
-                </ul>
-            </nav>
+        <div class="input-group mb-0" style="width:800px;">
+            <input type="text" class="form-control" placeholder="Nhập sản phẩm bạn cần tìm kiếm"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
         </div>
     </div>
     <div id="content" class="my-5">
@@ -98,7 +65,7 @@
                 <div id="inner-box2" class="collapse mt-2 mr-1">
                     @foreach ($price as $prices)
                         <div class="my-1"> <label class="tick">{{ $prices->start }} - {{ $prices->end }}<input
-                                    type="checkbox" name="idPrice" value="{{ $prices->idPrice }}">
+                                    type="radio" name="idPrice" value="{{ $prices->idPrice }}">
                                 <span class="check"></span> </label> </div>
                     @endforeach
                 </div>
@@ -107,7 +74,7 @@
         <div id="products">
             <div class="row mx-0" id="result">
                 @foreach ($data as $product)
-                    <div class="col-lg-4 col-md-6" onclick="detail({{$product->idProduct}})">
+                    <div class="col-lg-4 col-md-6" onclick="detail({{ $product->idProduct }})">
                         <div class="card d-flex flex-column align-items-center">
                             <div class="product-name">{{ $product->name }}</div>
                             <div class="card-img"> <img src="/assets/images/{{ $product->images }}" alt="">

@@ -2,7 +2,6 @@
     <a href="{{ route('index') }}">Quay lại trang chủ</a>
 @else
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,9 +141,9 @@
                     </div>
                 </header>
                 <main class="py-6 bg-surface-secondary">
-                    <div class="container-fluid">
+                    <div class="col d-flex justify-content-center">
                         <div class="row g-6 mb-6">
-                            <div class="col-xl-5 col-sm-6 col-12">
+                            <div class="col-xl-12 col-sm-6 col-12">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Tên</label>
                                     <input type="text" class="form-control" aria-describedby="emailHelp"
@@ -158,10 +157,10 @@
                                     <label for="exampleInputPassword1" class="form-label">Số lượng</label>
                                     <input type="text" class="form-control" id="number">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Images</label>
-                                    <input type="text" class="form-control" id="images">
-                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text" for="inputGroupFile01">Images</label>
+                                    <input type="file" class="form-control" id="images">
+                                  </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Price</label>
                                     <input type="text" class="form-control" id="price">

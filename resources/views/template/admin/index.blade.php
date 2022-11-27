@@ -52,7 +52,7 @@
                                 </a> </li>
                             <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bar-chart"></i>
                                     Analitycs </a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('add-product')}}"> <i class="bi bi-chat"></i>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('add')}}"> <i class="bi bi-chat"></i>
                                     Thêm sản phẩm
                                     <span
                                         class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 class AddProductController extends Controller
 {
@@ -22,6 +24,7 @@ class AddProductController extends Controller
             'idCategory' => $request->category,
             'idSale' => $request->sale,
             'images' => $request->images,
+            'Create_at' => new DateTime(),
         ]);
         return redirect("/admin/add");
     }
