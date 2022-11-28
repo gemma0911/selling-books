@@ -1,289 +1,123 @@
+<!doctype html>
 <html lang="en">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="{{ asset('assets/css/payment.css') }}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="form-validation.css" rel="stylesheet">
     <link href="assets/css/theme.css" rel="stylesheet" />
 </head>
-<style>
-    .payment-info {
-        background: blue;
-        padding: 10px;
-        border-radius: 6px;
-        color: #fff;
-        font-weight: bold;
-    }
-
-    .product-details {
-        padding: 10px;
-    }
-
-    body {
-        background: #eee;
-    }
-
-    .cart {
-        background: #fff;
-    }
-
-    .p-about {
-        font-size: 12px;
-    }
-
-    .table-shadow {
-        -webkit-box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
-        box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
-    }
-
-    .type {
-        font-weight: 400;
-        font-size: 10px;
-    }
-
-    label.radio {
-        cursor: pointer;
-    }
-
-    label.radio input {
-        position: absolute;
-        top: 0;
-        left: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    label.radio span {
-        padding: 1px 12px;
-        border: 2px solid #ada9a9;
-        display: inline-block;
-        color: #8f37aa;
-        border-radius: 3px;
-        text-transform: uppercase;
-        font-size: 11px;
-        font-weight: 300;
-    }
-
-    label.radio input:checked+span {
-        border-color: #fff;
-        background-color: blue;
-        color: #fff;
-    }
-
-    .credit-inputs {
-        background: rgb(102, 102, 221);
-        color: #fff !important;
-        border-color: rgb(102, 102, 221);
-    }
-
-    .credit-inputs::placeholder {
-        color: #fff;
-        font-size: 13px;
-    }
-
-    .credit-card-label {
-        font-size: 9px;
-        font-weight: 300;
-    }
-
-    .form-control.credit-inputs:focus {
-        background: rgb(102, 102, 221);
-        border: rgb(102, 102, 221);
-    }
-
-    .line {
-        border-bottom: 1px solid rgb(102, 102, 221);
-    }
-
-    .information span {
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    .information {
-        margin-bottom: 5px;
-    }
-
-    .items {
-        -webkit-box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.25);
-        box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
-    }
-
-    .spec {
-        font-size: 11px;
-    }
-</style>
-<body>
-    @include('template.component.header')
-    <div class="container mt-5 p-3 rounded cart">
-        <div class="row no-gutters">
-            <div class="col-md-8">
-                <div class="product-details mr-2">
-                    <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><span
-                            class="ml-2">Continue Shopping</span></div>
-                    <hr>
-                    <h6 class="mb-0">Sản phẩm</h6>
-                    <div class="d-flex justify-content-between"><span>You have 4 items in your cart</span>
-                        <div class="d-flex flex-row align-items-center"><span class="text-black-50">Số lượng</span>
-                            <div class="price ml-2"><span class="mr-1">Tổng tiền</span><i class="fa fa-angle-down"></i>
+@include('template.component.header')
+<br>
+<body class="bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    @foreach ($product as $product)
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{$product->name}}</h6>
+                            <small class="text-muted">Số lượng : {{$product->number}}</small>
+                        </div>
+                        <span class="text-muted">{{$product->number*$product->price}}</span>
+                    </li>
+                    @endforeach
+                </ul>
+                <form class="card p-2">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio2">Thanh toán</label>
+                      </div>
+                </form>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Billing address</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="email">Họ và tên người nhận</label>
+                        <input type="text" class="form-control" id="name"
+                            placeholder="Nhập họ và tên người nhận">
+                        <div class="invalid-feedback">
+                            Please enter a valid email address for shipping updates.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username">Số điện thoại</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="phone"
+                                placeholder="Nhập số điện thoại người nhận" required>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your username is required.
                             </div>
                         </div>
                     </div>
-                    @foreach ($product as $product)
-                    <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                        <div class="d-flex flex-row"><img class="rounded" src="/assets/images/{{$product->images}}"
-                                width="40">
-                            <div class="ml-2"><span class="font-weight-bold d-block">{{$product->name}}</span><span
-                                    class="spec">256GB, Navy Blue</span></div>
+
+                    <div class="mb-3">
+                        <label for="email">Địa chỉ</label>
+                        <div class="input-group">
+                            <select class="form-select form-select-sm" id="city" aria-label=".form-select-sm">
+                                <option value="" selected>Chọn tỉnh thành</option>
+                            </select>
+                            <select class="form-select form-select-sm" id="district" aria-label=".form-select-sm">
+                                <option value="" selected>Chọn quận huyện</option>
+                            </select>
+
+                            <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                                <option value="" selected>Chọn phường xã</option>
+                            </select>
                         </div>
-                        <div class="d-flex flex-row align-items-center"><span class="d-block">2</span><span
-                                class="d-block ml-5 font-weight-bold">$900</span><i
-                                class="fa fa-trash-o ml-3 text-black-50"></i></div>
+                    <div class="mb-3">
+                        <label for="address">Số nhà,đường,thôn,ấp ,....</label>
+                        <input type="text" class="form-control" id="address" placeholder="số nhà" required>
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address2">Ghi chú</label>
+                        <input type="text" class="form-control" id="note" placeholder="Ghi chú">
+                    </div>
+                    <hr class="mb-4">
+                    @foreach ($ship as $ship)
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="{{$ship->idShip}}">
+                        <label class="custom-control-label" for="same-address">{{$ship->name}}</label>
                     </div>
                     @endforeach
-                    <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                        <div class="d-flex flex-row"><img class="rounded" src="https://i.imgur.com/GQnIUfs.jpg"
-                                width="40">
-                            <div class="ml-2"><span class="font-weight-bold d-block">One pro 7T</span><span
-                                    class="spec">256GB, Navy Blue</span></div>
+                    <hr class="mb-4">
+
+                    <h4 class="mb-3">Phương thức thanh toán</h4>
+
+                    <div class="d-block my-3">
+                        @foreach ($paymentmethod as $paymentmethod)
+                        <div class="custom-control custom-radio">
+                            <input id="{{$paymentmethod->idPaymentMethod}}" name="paymentMethod" type="radio" class="custom-control-input"
+                                checked required>
+                            <label class="custom-control-label" for="credit">{{$paymentmethod->name}}</label>
                         </div>
-                        <div class="d-flex flex-row align-items-center"><span class="d-block">2</span><span
-                                class="d-block ml-5 font-weight-bold">$900</span><i
-                                class="fa fa-trash-o ml-3 text-black-50"></i></div>
+                        @endforeach
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                        <div class="d-flex flex-row"><img class="rounded" src="https://i.imgur.com/o2fKskJ.jpg"
-                                width="40">
-                            <div class="ml-2"><span class="font-weight-bold d-block">Google pixel 4 XL</span><span
-                                    class="spec">256GB, Axe black</span></div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center"><span class="d-block">1</span><span
-                                class="d-block ml-5 font-weight-bold">$800</span><i
-                                class="fa fa-trash-o ml-3 text-black-50"></i></div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                        <div class="d-flex flex-row"><img class="rounded" src="https://i.imgur.com/Tja5H1c.jpg"
-                                width="40">
-                            <div class="ml-2"><span class="font-weight-bold d-block">Samsung galaxy Note
-                                    10&nbsp;</span><span class="spec">256GB, Navy Blue</span></div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center"><span class="d-block">1</span><span
-                                class="d-block ml-5 font-weight-bold">$999</span><i
-                                class="fa fa-trash-o ml-3 text-black-50"></i></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="payment-info">
-                    <div class="d-flex justify-content-between align-items-center"><span>Card details</span><img
-                            class="rounded" src="https://i.imgur.com/WU501C8.jpg" width="30"></div><span
-                        class="type d-block mt-3 mb-1">Card type</span><label class="radio"> <input type="radio"
-                            name="card" value="payment" checked> <span><img width="30"
-                                src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
-
-                    <label class="radio"> <input type="radio" name="card" value="payment"> <span><img
-                                width="30" src="https://img.icons8.com/officel/48/000000/visa.png" /></span>
-                    </label>
-
-                    <label class="radio"> <input type="radio" name="card" value="payment"> <span><img
-                                width="30" src="https://img.icons8.com/ultraviolet/48/000000/amex.png" /></span>
-                    </label>
-
-
-                    <label class="radio"> <input type="radio" name="card" value="payment"> <span><img
-                                width="30" src="https://img.icons8.com/officel/48/000000/paypal.png" /></span>
-                    </label>
-                    <div><label class="credit-card-label">Name on card</label><input type="text"
-                            class="form-control credit-inputs" placeholder="Name"></div>
-                    <div><label class="credit-card-label">Card number</label><input type="text"
-                            class="form-control credit-inputs" placeholder="0000 0000 0000 0000"></div>
-                    <div class="row">
-                        <div class="col-md-6"><label class="credit-card-label">Date</label><input type="text"
-                                class="form-control credit-inputs" placeholder="12/24"></div>
-                        <div class="col-md-6"><label class="credit-card-label">CVV</label><input type="text"
-                                class="form-control credit-inputs" placeholder="342"></div>
-                    </div>
-                    <hr class="line">
-                    <div class="d-flex justify-content-between information"><span>Subtotal</span><span>$3000.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between information"><span>Shipping</span><span>$20.00</span>
-                    </div>
-                    <div class="d-flex justify-content-between information"><span>Total(Incl.
-                            taxes)</span><span>$3020.00</span></div><button
-                        class="btn btn-primary btn-block d-flex justify-content-between mt-3"
-                        type="button"><span>$3020.00</span><span>Checkout<i
-                                class="fa fa-long-arrow-right ml-1"></i></span></button>
-                </div>
+                    <hr class="mb-4">
+                </form>
             </div>
         </div>
     </div>
-    {{-- <div>
-        <div class="bg-white-100">
-            <div class="py-4">
-                <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg md:max-w-xl mx-2">
-                    <div class="md:flex ">
-                        <div class="w-full p-4 px-5 py-5">
-                            <div class="flex flex-row">
-                                <h2 class="text-3xl text-green-400 font-semibold">ĐỊA CHỈ GIAO HÀNG</h2>
-                            </div>
-                            <span>Tên người nhận</span>
-                            <input type="text" name="mail"
-                                class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm"
-                                placeholder="Tên người nhận">
-                            <span>Số điện thoại</span>
-                            <input type="text" name="mail"
-                                class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-1 text-sm"
-                                placeholder="Số điện thoại người nhận">
-                            <div>
-                                <select
-                                    class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm"
-                                    id="city" aria-label=".form-select-sm">
-                                    <option value="" selected>Chọn tỉnh thành</option>
-                                </select>
-
-                                <select
-                                    class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm"
-                                    id="district" aria-label=".form-select-sm">
-                                    <option value="" selected>Chọn quận huyện</option>
-                                </select>
-
-                                <select
-                                    class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm"
-                                    id="ward" aria-label=".form-select-sm">
-                                    <option value="" selected>Chọn phường xã</option>
-                                </select>
-                            </div>
-                            <input type="text" name="mail"
-                                class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm"
-                                placeholder="Nhập địa chỉ giao hàng">
-                            <div class="flex justify-between items-center pt-2"> <button type="button"
-                                    class="h-12 w-24 text-blue-500 text-xs font-medium">Quay về giỏ hàng</button> <button
-                                    type="button"
-                                    class="h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white">Thanh toán</button> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js">
-        < /> <
-        script >
-            var citis = document.getElementById("city");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        var citis = document.getElementById("city");
         var districts = document.getElementById("district");
         var wards = document.getElementById("ward");
         var Parameter = {
@@ -298,45 +132,42 @@
 
         function renderCity(data) {
             for (const x of data) {
-                var opt = document.createElement('option');
-                opt.value = x.Name;
-                opt.text = x.Name;
-                opt.setAttribute('data-id', x.Id);
-                citis.options.add(opt);
+                citis.options[citis.options.length] = new Option(x.Name, x.Id);
             }
             citis.onchange = function() {
                 district.length = 1;
                 ward.length = 1;
-                if (this.options[this.selectedIndex].dataset.id != "") {
-                    const result = data.filter(n => n.Id === this.options[this.selectedIndex].dataset.id);
+                if (this.value != "") {
+                    const result = data.filter(n => n.Id === this.value);
 
                     for (const k of result[0].Districts) {
-                        var opt = document.createElement('option');
-                        opt.value = k.Name;
-                        opt.text = k.Name;
-                        opt.setAttribute('data-id', k.Id);
-                        district.options.add(opt);
+                        district.options[district.options.length] = new Option(k.Name, k.Id);
                     }
                 }
             };
             district.onchange = function() {
                 ward.length = 1;
-                const dataCity = data.filter((n) => n.Id === citis.options[citis.selectedIndex].dataset.id);
-                if (this.options[this.selectedIndex].dataset.id != "") {
-                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.options[this.selectedIndex]
-                        .dataset.id)[0].Wards;
+                const dataCity = data.filter((n) => n.Id === citis.value);
+                if (this.value != "") {
+                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
 
                     for (const w of dataWards) {
-                        var opt = document.createElement('option');
-                        opt.value = w.Name;
-                        opt.text = w.Name;
-                        opt.setAttribute('data-id', w.Id);
-                        wards.options.add(opt);
+                        wards.options[wards.options.length] = new Option(w.Name, w.Id);
                     }
                 }
             };
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script>
+        window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
+    </script>
+    <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script>
 </body>
 
 </html>

@@ -17,7 +17,6 @@ use App\Http\Controllers\PriceController;
 use App\Http\Controllers\admin\AddProductController;
 use App\Http\Controllers\SearchProductController;
 use App\Http\Controllers\PaymentController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,7 +52,7 @@ Route::get('/price5', [PriceController::class, 'index5'])->name('price');
 Route::get('/price6', [PriceController::class, 'index6'])->name('price');
 Route::get('/price7', [PriceController::class, 'index7'])->name('price');
 
-Route::get('/payment',[::class,'index'])->name('payment');
+Route::get('/payment',[PaymentController::class,'index'])->name('payment');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');
