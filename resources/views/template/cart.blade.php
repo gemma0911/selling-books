@@ -231,7 +231,7 @@
                                             <td>
                                                 <div class="price"> <var class="price"><input
                                                             id="price{{ $products->idProduct }}" class="form-control"
-                                                            style="width:200px" value="{{ $products->price }}"></var>
+                                                            style="width:200px" value="{{ $products->price*$products->number }}"></var>
                                                 </div>
                                             </td>
                                             <td class="text-right d-none d-md-block">
@@ -254,10 +254,10 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <form>
-                            <div class="form-group"> <label>Have coupon?</label>
+                            <div class="form-group"> <label>Bạn có mã giảm giá?</label>
                                 <div class="input-group"> <input type="text" class="form-control coupon"
                                         name="" placeholder="Coupon code"> <span class="input-group-append">
-                                        <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                                        <button class="btn btn-primary btn-apply coupon">Áp dụng</button> </span> </div>
                             </div>
                         </form>
                     </div>
@@ -265,27 +265,25 @@
                 <div class="card">
                     <div class="card-body">
                         <dl class="dlist-align">
+                            <dt>Tiền giảm giá:</dt>
+                            <dd class="text-right text-danger ml-3">0 vnđ</dd>
+                        </dl>
+                        <dl class="dlist-align">
                             <dt>Tổng tiền:</dt>
                             <dd class="text-right ml-3"><div id="totalnumber">
                                 @if (!empty($delete))
-                                {{$delete}}
+                                {{$delete}} vnđ
                                 @else
-                                {{$total}}
+                                {{$total}} vnđ
                                 @endif
-                                </div></dd>
                         </dl>
-                        <dl class="dlist-align">
-                            <dt>Tiền giảm giá:</dt>
-                            <dd class="text-right text-danger ml-3">- $10.00</dd>
-                        </dl>
-                        <dl class="dlist-align">
-                            <dt>Total:</dt>
-                            <dd class="text-right text-dark b ml-3"><strong id="total">$59.97</strong></dd>
-                        </dl>
-                        <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
-                            Make Purchase </a> <a href="#"
-                            class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue
-                            Shopping</a>
+                        {{-- <dl class="dlist-align">
+                            <dt>Tổng tiền:</dt>
+                            <dd class="text-right text-dark b ml-3"><strong id="totalnumber"></strong></dd>
+                        </dl> --}}
+                        <hr> <a href="{{ route('payment') }}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+                            Thanh toán </a> <a href=""
+                            class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Tiếp tục mua hàng</a>
                     </div>
                 </div>
             </aside>

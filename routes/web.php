@@ -15,6 +15,9 @@ use App\Http\Controllers\cart\EditCartController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\admin\AddProductController;
+use App\Http\Controllers\SearchProductController;
+use App\Http\Controllers\PaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +32,8 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/cart', [CartController::class, 'Cart'])->name('cart');
 Route::get('/product', [PaginatisonController::class, 'index'])->name('product');
+
+Route::get('/searchProduct',[SearchProductController::class,'index'])->name('searchproduct');
 
 Route::get('/search', [CategoryController::class, 'index'])->name('search');
 Route::get('/search1', [CategoryController::class, 'index1'])->name('category');
@@ -47,6 +52,8 @@ Route::get('/price4', [PriceController::class, 'index4'])->name('price');
 Route::get('/price5', [PriceController::class, 'index5'])->name('price');
 Route::get('/price6', [PriceController::class, 'index6'])->name('price');
 Route::get('/price7', [PriceController::class, 'index7'])->name('price');
+
+Route::get('/payment',[::class,'index'])->name('payment');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');

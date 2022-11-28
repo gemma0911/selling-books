@@ -8,12 +8,12 @@
             </span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="#feature">Product</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="#validation">Sản phẩm</a>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ route('index') }}">Sản phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#validation"></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="#superhero">Mã Giảm Giá</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#superhero">Lịch sử mua hàng</a></li>
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#marketing">Liên hệ</a>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ route('cart') }}"><i class="bi bi-cart-check-fill"></i></a>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ route('cart') }}">Giỏ hàng</a>
                 </li>
             </ul>
             @if (empty(session()->get('name')))

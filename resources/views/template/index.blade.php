@@ -51,32 +51,28 @@
     </script>
     <script>
         function detail(idProduct) {
-            window.location = '/product-detail?idProduct='+idProduct
+            window.location = '/product-detail?idProduct=' + idProduct
+        }
+    </script>
+    <script>
+        function searchproduct1() {
+            $.ajax({
+                url: '{{ route('searchproduct') }}',
+                type: "get",
+                dateType: "text",
+                data: {
+                    content: document.getElementById('inputsearch').value,
+                },
+                success: function(result) {
+                    $('#result').html(result);
+                }
+            });
         }
     </script>
 </head>
 
 <body>
     @include('template.component.header')
-
-    <section class="pt-7" id="feature">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-md-start text-center py-6">
-                    <h1 class="mb-4 fs-9 fw-bold">The Design Thinking Superpowers</h1>
-                    <p class="mb-6 lead text-secondary">Tools tutorials, design and innovation experts, all<br
-                            class="d-none d-xl-block" />in one place! The most intuitive way to imagine<br
-                            class="d-none d-xl-block" />your next user experience.</p>
-                    <div class="text-center text-md-start"><a class="btn btn-warning me-3 btn-lg" href="#!"
-                            role="button">Get started</a><a class="btn btn-link text-warning fw-medium" href="#!"
-                            role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span
-                                class="fas fa-play me-2"></span>Watch the video </a></div>
-                </div>
-                <div class="col-md-6 text-end"><img class="pt-7 pt-md-0 img-fluid" src="assets/img/hero/hero-img.png"
-                        alt="" /></div>
-            </div>
-        </div>
-    </section>
 
     <section class="pt-5" id="validation">
         @include('template.component.product')

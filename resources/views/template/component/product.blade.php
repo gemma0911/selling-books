@@ -7,8 +7,8 @@
         </nav>
         <div class="input-group mb-0" style="width:800px;">
             <input type="text" class="form-control" placeholder="Nhập sản phẩm bạn cần tìm kiếm"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                aria-label="Recipient's username" aria-describedby="button-addon2" id="inputsearch">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchproduct1()">Search</button>
         </div>
     </div>
     <div id="content" class="my-5">

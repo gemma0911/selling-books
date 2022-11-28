@@ -17,7 +17,7 @@ class DeleteCartController extends Controller
             ->where('cart.idUser',session()->get('idUser'))
             ->where('cart.idProduct',$request->idProduct)
             ->delete();
-            return view("template.component.resultcart",$delete);
+            return view("template.component.resultcart");
         }
     }
 }
