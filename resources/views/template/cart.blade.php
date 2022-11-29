@@ -281,7 +281,7 @@
                             <dt>Tổng tiền:</dt>
                             <dd class="text-right text-dark b ml-3"><strong id="totalnumber"></strong></dd>
                         </dl> --}}
-                        <hr> <a href="{{ route('payment') }}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+                        <hr> <a href="/payment" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
                             Thanh toán </a> <a href=""
                             class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Tiếp tục mua hàng</a>
                     </div>

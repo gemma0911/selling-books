@@ -52,7 +52,9 @@ Route::get('/price5', [PriceController::class, 'index5'])->name('price');
 Route::get('/price6', [PriceController::class, 'index6'])->name('price');
 Route::get('/price7', [PriceController::class, 'index7'])->name('price');
 
-Route::get('/payment',[PaymentController::class,'index'])->name('payment');
+Route::get('/payment',[PaymentController::class,'index']);
+
+Route::get('/payment/end',[PaymentController::class,'payment'])->name('payment');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
 Route::post('/register', [RegisterController::class, 'postRegister'])->name('register.post');

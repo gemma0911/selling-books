@@ -30,7 +30,7 @@ class RegisterController extends Controller
                 'email.required' => 'Email là trường bắt buộc',
                 'email.email' => 'Email không đúng định dạng',
                 'email.max' => 'Email không quá 255 ký tự',
-                    'email.unique' => 'Email đã tồn tại',
+                'email.unique' => 'Email đã tồn tại',
                 'password.required' => 'Mật khẩu là trường bắt buộc',
                 'password.min' => 'Mật khẩu phải chứa ít nhất 8 ký tự',
                 'password.confirmed' => 'Xác nhận mật khẩu không đúng',
