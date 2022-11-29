@@ -15,14 +15,15 @@ class AddToCartController extends Controller
         if($request->id)
         {
             $count = DB::table('cart')
-            ->where('idProduct',$request->id)->where('idPayment',0)
+            ->where('idProduct',$request->id)
             ->where('idUser',session()->get('idUser'))
+            ->where('idPayment',null)
             ->value('number');
 
             if($count)
             {
                 $query = DB::table('cart')
-                ->where('idProduct',$request->get('id'))->where('idPayment',0)
+                ->where('idProduct',$request->get('id'))->where('idPayment',null)
                 ->where('idUser',session()->get('idUser'))
                 ->update(['number' => $count + 1]);
             } else {
@@ -32,7 +33,6 @@ class AddToCartController extends Controller
                         'idUser' => session()->get('idUser'),
                         'number' => 1,
                         'create_at' => new DateTime(),
-                        'idPayment' => 0,
                     ]
                 );
             }

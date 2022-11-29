@@ -64,7 +64,7 @@ class PaymentController extends Controller
             ]);
             $query1 = DB::table('payment')->where('name',$request->name)->get();
            foreach($query1 as $query1){
-            $query2 = DB::table('cart')->where('idPayment',0)
+            $query2 = DB::table('cart')->where('idPayment',null)
             ->where('idUser',session()->get('idUser'))
             ->update(['idPayment' => $query1->idPayment]);
            }
@@ -74,11 +74,11 @@ class PaymentController extends Controller
     public function index()
     {
         $cart = DB::table('cart')->join('product', 'product.idProduct', '=', 'cart.idProduct')
-            ->where('cart.idUser', session()->get('idUser'))->where('idPayment',0)
+            ->where('cart.idUser', session()->get('idUser'))->where('idPayment',null)
             ->select('cart.number', 'product.images', 'product.name', 'product.content', 'cart.idProduct', 'product.price')->get();
 
         $query2 = DB::table('cart')->join('product', 'product.idProduct', '=', 'cart.idProduct')
-            ->where('cart.idUser', session()->get('idUser'))->where('idPayment',0)
+            ->where('cart.idUser', session()->get('idUser'))->where('idPayment',null)
             ->select('cart.number', 'product.images', 'product.name', 'product.content', 'product.price')
             ->get();
         $count = 0;

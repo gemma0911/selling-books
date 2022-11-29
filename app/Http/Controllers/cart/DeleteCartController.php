@@ -13,7 +13,8 @@ class DeleteCartController extends Controller
     {
         if ($request->idProduct) {
             $delete = DB::table('cart')
-            ->join('product','product.idProduct','=','cart.idProduct')->where('idPayment',0)
+            ->join('product','product.idProduct','=','cart.idProduct')
+            ->where('idPayment',null)
             ->where('cart.idUser',session()->get('idUser'))
             ->where('cart.idProduct',$request->idProduct)
             ->delete();

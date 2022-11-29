@@ -15,6 +15,7 @@ use App\Http\Controllers\cart\EditCartController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\admin\AddProductController;
+use App\Http\Controllers\oder\OderController;
 use App\Http\Controllers\SearchProductController;
 use App\Http\Controllers\PaymentController;
 /*
@@ -53,7 +54,7 @@ Route::get('/price6', [PriceController::class, 'index6'])->name('price');
 Route::get('/price7', [PriceController::class, 'index7'])->name('price');
 
 Route::get('/payment',[PaymentController::class,'index']);
-
+Route::get('/oder', [OderController::class, 'index'])->name('oder');
 Route::get('/payment/end',[PaymentController::class,'payment'])->name('payment');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
