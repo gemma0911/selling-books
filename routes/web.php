@@ -15,6 +15,7 @@ use App\Http\Controllers\cart\EditCartController;
 use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\admin\AddProductController;
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\oder\OderController;
 use App\Http\Controllers\SearchProductController;
 use App\Http\Controllers\PaymentController;
@@ -55,6 +56,9 @@ Route::get('/price7', [PriceController::class, 'index7'])->name('price');
 
 Route::get('/payment',[PaymentController::class,'index']);
 Route::get('/oder', [OderController::class, 'index'])->name('oder');
+Route::get('/deleteoder', [OderController::class, 'deleteoder'])->name('deleteoder');
+Route::get('/oderdetail', [OderController::class, 'oderdetail'])->name('oderdetail');
+Route::get('/editoder', [OderController::class, 'editoder'])->name('editoder');
 Route::get('/payment/end',[PaymentController::class,'payment'])->name('payment');
 
 Route::get('/register', [RegisterController::class, 'getRegister'])->name('register.get');
@@ -71,14 +75,10 @@ Route::get('/edit-to-cart', [EditCartController::class, 'EditToCart'])->name('ed
 
 Route::get('/product-detail', [DetailProductController::class, 'index'])->name('productdetail');
 
-Route::get('/admin',function(){
-    return view("template.admin.index");
-});
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/',function(){
-        return view("template.admin.index");
-    });
+    Route::get("/",[AdminController::class,'index'])->name('admin-index');
+    Route::get("/oder",[AdminController::class,'oder'])->name('admin-oder');
     Route::get("/add",[AddProductController::class,'index'])->name('add');
     Route::get("/add-product",[AddProductController::class,'addProduct'])->name('add-product');
 });

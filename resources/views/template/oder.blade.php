@@ -29,9 +29,7 @@
                     </th>
                     <th scope="col">Mã đơn hàng</th>
                     <th scope="col">Ngày tạo</th>
-                    <th scope="col">Sản phẩm</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Giá Tiền</th>
+                    <th scope="col">Tên người nhận</th>
                     <th scope="col">Tổng tiền</th>
                     <th scope="col">Tình trạng</th>
                     <th scope="col">Updated</th>
@@ -41,37 +39,29 @@
                 @foreach ($product as $product)
                     <tr class="rounded bg-white">
                         <th scope="row">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            </div>
                         </th>
-                        <td class="order-color">{{$product->idPayment}}</td>
-                        <td>{{$product->create_at}}</td>
-                        <td class="d-flex align-items-center">
-                            <img src="/assets/images/{{ $product->images }}" class="rounded-circle" width="25">
-                            <span class="ml-2">{{ $product->name }}</span>
+                        <td class="order-color">{{ $product->idPayment }}</td>
+                        <td>{{ $product->create_at }}</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->total }}</td>
+                        <td>
+                            @if ($product->status == 1)
+                                Chưa duyệt
+                            @elseif ($product->status == 3)
+                                Đã duyệt
+                            @endif
+                        </td>
+                        </td>
+                        <td>{{$product->update_at}}</td>
+                        <td class="text-end"> <a href="{{ route('oderdetail', ['idPayment' => $product->idPayment]) }}"
+                                class="btn btn-sm btn-neutral">View</a>
+                            @if ($product->status == 1)
+                                <a href="{{ route('deleteoder', ['idPayment' => $product->idPayment]) }}"
+                                    class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i></a>
+                            @endif
                         </td>
                         <td>
-                            {{ $product->number }}
-                        </td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->price * $product->number }}</td>
-                        <td>
-                            <div class="dropdown">
-                                @if ($product->status == 1)
-                                    <button class="btn btn-danger btn-sm dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                        Chưa duyệt
-                                    </button>
-                                @elseif ($product->status == 3)
-                                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                        Đã duyệt
-                                    </button>
-                                @endif
-                            </div>
-                        </td>
-                        <td>Today</td>
                     </tr>
                 @endforeach
             </tbody>

@@ -42,6 +42,7 @@
                 idShip: ss,
                 idPaymentMethod: pp,
                 note: document.getElementById('note').value,
+                total: document.getElementById('total').innerHTML
             };
             var dataType = 'text';
             $.get(url, data, dataType);
@@ -70,6 +71,14 @@
                             <span class="text-muted">{{ $product->number * $product->price }}</span>
                         </li>
                     @endforeach
+                </ul>
+                <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Tổng tiền</h6>
+                            </div>
+                            <span id="total" class="text-muted">{{ $total }}</span>
+                        </li>
                 </ul>
                 <form class="card p-2">
                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -143,7 +152,7 @@
                             <div class="">
                                 <input id="methodgiaohang" name="methodgiaohang" type="checkbox" class=""
                                     value="{{ $ship->idShip }}">
-                                <label class="" for="credit">{{ $ship->name }}</label>
+                                <label class="" for="credit">{{ $ship->nameShip }}</label>
                             </div>
                         @endforeach
                         <hr class="mb-4">
@@ -154,7 +163,7 @@
                                 <div class="">
                                     <input id="methodpayment" name="methodpayment" type="checkbox" class=""
                                         value="{{ $paymentmethod->idPaymentMethod }}">
-                                    <label class="" for="credit">{{ $paymentmethod->name }}</label>
+                                    <label class="" for="credit">{{ $paymentmethod->namePaymentMethod }}</label>
                                 </div>
                             @endforeach
                         </div>

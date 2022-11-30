@@ -61,8 +61,9 @@ class PaymentController extends Controller
                 'idUser' => session()->get('idUser'),
                 'create_at' => new DateTime(),
                 'status' => 1,
+                'total' => $request->total,
             ]);
-            $query1 = DB::table('payment')->where('name',$request->name)->get();
+            $query1 = DB::table('payment')->orderByDesc('idPayment')->where('name',$request->name)->get();
            foreach($query1 as $query1){
             $query2 = DB::table('cart')->where('idPayment',null)
             ->where('idUser',session()->get('idUser'))
