@@ -274,16 +274,11 @@
                                                 <td> {{ $product->total }} </td>
                                                 <td> <span class="badge badge-lg badge-dot"> <i
                                                             class="bg-success"></i>Scheduled </span> </td>
-                                                <td class="text-end"> <a
-                                                        href="{{ route('admin-oder', ['idPayment' => $product->idPayment]) }}"
-                                                        class="btn btn-sm btn-neutral">View</a></button><button
-                                                        type="button"
-                                                        class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
-                                                            class="bi bi-check2-circle"></i></button> <button
-                                                        type="button"
-                                                        class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
-                                                            class="bi bi-trash"></i> </td>
-
+                                                <td class="text-end">
+                                                    <a href="{{ route('admin-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-neutral">View</a>
+                                                    <a href="{{ route('admin-update-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-check2-circle"></i></a>
+                                                    <a href="{{ route('admin-delete-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i></a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

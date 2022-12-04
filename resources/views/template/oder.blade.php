@@ -18,54 +18,48 @@
     <link href="assets/css/theme.css" rel="stylesheet" />
 
 </head>
-
+<style>
+    body {
+        font-family: 'Poppins', sans-serif
+    }
+</style>
 <body>
     @include('template.component.header')
-    <div class="container mt-5">
-        <table class="table table-borderless main">
-            <thead>
-                <tr class="head">
-                    <th scope="col" class="ml-2">
-                    </th>
-                    <th scope="col">Mã đơn hàng</th>
-                    <th scope="col">Ngày tạo</th>
-                    <th scope="col">Tên người nhận</th>
-                    <th scope="col">Tổng tiền</th>
-                    <th scope="col">Tình trạng</th>
-                    <th scope="col">Updated</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($product as $product)
-                    <tr class="rounded bg-white">
-                        <th scope="row">
-                        </th>
-                        <td class="order-color">{{ $product->idPayment }}</td>
-                        <td>{{ $product->create_at }}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->total }}</td>
-                        <td>
-                            @if ($product->status == 1)
-                                Chưa duyệt
-                            @elseif ($product->status == 3)
-                                Đã duyệt
-                            @endif
-                        </td>
-                        </td>
-                        <td>{{$product->update_at}}</td>
-                        <td class="text-end"> <a href="{{ route('oderdetail', ['idPayment' => $product->idPayment]) }}"
-                                class="btn btn-sm btn-neutral">View</a>
-                            @if ($product->status == 1)
-                                <a href="{{ route('deleteoder', ['idPayment' => $product->idPayment]) }}"
-                                    class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
-                                        class="bi bi-trash"></i></a>
-                            @endif
-                        </td>
-                        <td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<div class="container">
+<div class="row header" style="text-align:center;color:green">
+<h3 style="font-family:Georgia, 'Times New Roman', Times, serif">Đơn hàng của bạn</h3>
+</div>
+<table id="example" class="table table-striped table-bordered" style="width:100%,font-family:Georgia, 'Times New Roman', Times, serif">
+        <thead>
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Tên người nhận</th>
+                <th>Tổng tiền đơn hàng</th>
+                <th>Ngày tạo đơn</th>
+                <th>Ngày cập nhật</th>
+                <th>Tình trạng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($product as $product)
+            <tr>
+                <td>{{$product->idPayment}}</td>
+                <td>{{$product->name}}</td>
+                <td>{{$product->total}}</td>
+                <td>{{$product->create_at}}</td>
+                <td>{{$product->update_at}}</td>
+                <td>
+                    @if ($product->status==1)
+                        Chưa duyệt
+                    @elseif ($product->status==3)
+                        Đã duyệt
+                    @endif
+                </td>
+            </tr>
+            @endforeach
+    </table>
     </div>
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>

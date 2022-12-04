@@ -31,4 +31,15 @@ class AdminController extends Controller
 
         return view('template.admin.oder',['product'=>$query,'product2'=>$query2]);
     }
+    public function deleteoder(Request $request){
+        $query = DB::table('cart')->where('idPayment',$request->idPayment)->delete();
+        $query = DB::table('payment')->where('idPayment',$request->idPayment)->delete();
+        return redirect('/admin');
+    }
+    public function updateoder(Request $request){
+        $query = DB::table('payment')->where('idPayment',$request->idPayment)->update([
+            'status'=>3,
+        ]);
+        return redirect('/admin');
+    }
 }
