@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Productly | Design Agency Landing Page UI</title>
+    <title>Giỏ hàng</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -251,23 +251,8 @@
                 </div>
             </aside>
             <aside class="col-lg-3">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group"> <label>Bạn có mã giảm giá?</label>
-                                <div class="input-group"> <input type="text" class="form-control coupon"
-                                        name="" placeholder="Coupon code"> <span class="input-group-append">
-                                        <button class="btn btn-primary btn-apply coupon">Áp dụng</button> </span> </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-body">
-                        <dl class="dlist-align">
-                            <dt>Tiền giảm giá:</dt>
-                            <dd class="text-right text-danger ml-3">0 vnđ</dd>
-                        </dl>
                         <dl class="dlist-align">
                             <dt>Tổng tiền:</dt>
                             <dd class="text-right ml-3"><div id="totalnumber">
@@ -281,7 +266,8 @@
                             <dt>Tổng tiền:</dt>
                             <dd class="text-right text-dark b ml-3"><strong id="totalnumber"></strong></dd>
                         </dl> --}}
-                        <hr> <a href="/payment" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+                        <hr>
+                         <a href="/payment" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
                             Thanh toán </a> <a href=""
                             class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Tiếp tục mua hàng</a>
                     </div>

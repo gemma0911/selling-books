@@ -12,8 +12,8 @@
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#validation"></a>
                 </li>
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="{{route('oder')}}">Trạng thái đơn hàng</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="#marketing">Liên hệ</a>
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ route('cart') }}">Giỏ hàng</a>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#marketing">Liên hệ</a>
                 </li>
             </ul>
             @if (empty(session()->get('name')))
