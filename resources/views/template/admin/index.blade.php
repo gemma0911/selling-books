@@ -52,8 +52,7 @@
                                 </a> </li>
                             <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bar-chart"></i>
                                     Analitycs </a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('add') }}"> <i
-                                        class="bi bi-chat"></i>
+                            <li class="nav-item"> <a class="nav-link" href=""> <i class="bi bi-chat"></i>
                                     Thêm sản phẩm
                                     <span
                                         class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>
@@ -272,13 +271,29 @@
                                                     </a>
                                                 </td>
                                                 <td> {{ $product->total }} </td>
-                                                <td> <span class="badge badge-lg badge-dot"> <i
-                                                            class="bg-success"></i>Scheduled </span> </td>
-                                                <td class="text-end">
-                                                    <a href="{{ route('admin-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-neutral">View</a>
-                                                    <a href="{{ route('admin-update-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-check2-circle"></i></a>
-                                                    <a href="{{ route('admin-delete-oder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i></a>
-                                                </td>
+                                                @if ($product->status == 1)
+                                                    <td> <span class="badge badge-lg badge-dot"> <i
+                                                                class="bg-success"></i>Chưa duyệt </span> </td>
+                                                    <td class="text-end">
+                                                        <a href="{{ route('admin-oder', ['idPayment' => $product->idPayment]) }}"
+                                                            class="btn btn-sm btn-neutral">View</a>
+                                                        <a href="{{ route('admin-update-oder', ['idPayment' => $product->idPayment]) }}"
+                                                            class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                            <i class="bi bi-check2-circle"></i></a>
+                                                        <a href="{{ route('admin-delete-oder', ['idPayment' => $product->idPayment]) }}"
+                                                            class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                            <i class="bi bi-trash"></i></a>
+                                                    </td>
+                                                @else
+                                                    <td> <span class="badge badge-lg badge-dot"> <i
+                                                                class="bg-success"></i>Đã duyệt </span> </td>
+                                                    <td class="text-end">
+                                                        <a href="{{ route('admin-oder', ['idPayment' => $product->idPayment]) }}"
+                                                            class="btn btn-sm btn-neutral">View</a>
+                                                        <a href="{{ route('admin-delete-oder', ['idPayment' => $product->idPayment]) }}"
+                                                            class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                            <i class="bi bi-trash"></i></a>
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>

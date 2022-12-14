@@ -40,6 +40,8 @@
                 <th>Ngày tạo đơn</th>
                 <th>Ngày cập nhật</th>
                 <th>Tình trạng</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -57,6 +59,8 @@
                         Đã duyệt
                     @endif
                 </td>
+                <td><a href="{{ route('oderdetail', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-neutral">Sửa</a></td>
+                <td><a href="{{ route('deleteoder', ['idPayment' => $product->idPayment]) }}" class="btn btn-sm btn-neutral">Xóa</a></td>
             </tr>
             @endforeach
     </table>
@@ -68,7 +72,7 @@
     <script src="vendors/fontawesome/all.min.js"></script>
     <script src="assets/js/theme.js"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
+        href="https://fonts.googleapis.com/git?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap"
         rel="stylesheet">
     <script src="{{ asset('assets/js/js.js') }}"></script>
 </body>
