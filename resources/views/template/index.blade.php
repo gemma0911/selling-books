@@ -86,5 +86,4 @@
         rel="stylesheet">
     <script src="{{ asset('assets/js/js.js') }}"></script>
 </body>
-
 </html>

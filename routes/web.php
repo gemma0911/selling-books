@@ -16,6 +16,9 @@ use App\Http\Controllers\DetailProductController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\admin\AddProductController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\ManageOder;
+use App\Http\Controllers\admin\ManageProduct;
+use App\Http\Controllers\admin\ManageUser;
 use App\Http\Controllers\oder\OderController;
 use App\Http\Controllers\SearchProductController;
 use App\Http\Controllers\PaymentController;
@@ -69,6 +72,15 @@ Route::get('/product-detail', [DetailProductController::class, 'index'])->name('
 
 Route::prefix('/admin')->group(function () {
     Route::get("/",[AdminController::class,'index'])->name('admin-index');
+
+    Route::get("/manage-product",[ManageProduct::class,'index'])->name('admin-manageproduct');
+    Route::get("/manage-product-delete",[ManageProduct::class,'delete'])->name('admin-manageproduct-delete');
+
+    Route::get("/manage-user",[ManageUser::class,'index'])->name('admin-manageuser');
+    Route::get("/manage-user-delete",[ManageUser::class,'delete'])->name('admin-manageuser-delete');
+
+    Route::get("/manage-oder",[ManageOder::class,'index'])->name('admin-manageoder');
+
     Route::get("/oder",[AdminController::class,'oder'])->name('admin-oder');
     Route::get("/add",[AddProductController::class,'index'])->name('admin-add');
     Route::get("/add-product",[AddProductController::class,'addProduct'])->name('admin-add-product');
