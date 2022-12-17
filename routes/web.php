@@ -75,6 +75,8 @@ Route::prefix('/admin')->group(function () {
 
     Route::get("/manage-product",[ManageProduct::class,'index'])->name('admin-manageproduct');
     Route::get("/manage-product-delete",[ManageProduct::class,'delete'])->name('admin-manageproduct-delete');
+    Route::get("/manage-product-add",[ManageProduct::class,'addproduct'])->name('admin-manageproduct-add');
+    Route::get("/manage-product-add1",[ManageProduct::class,'addproductpost'])->name('admin-manageproduct-add-post');
 
     Route::get("/manage-user",[ManageUser::class,'index'])->name('admin-manageuser');
     Route::get("/manage-user-delete",[ManageUser::class,'delete'])->name('admin-manageuser-delete');
