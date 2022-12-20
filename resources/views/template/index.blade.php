@@ -31,9 +31,7 @@
                 },
             });
             if ($idUser) {
-                if ($.ajax) {
-                    alert('them thanh cong');
-                }
+
             } else {
                 alert('vui lòng đăng nhập')
                 window.location = "{{ route('login.get') }}";

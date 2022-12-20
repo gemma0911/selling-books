@@ -231,7 +231,8 @@
                                             <td>
                                                 <div class="price"> <var class="price"><input
                                                             id="price{{ $products->idProduct }}" class="form-control"
-                                                            style="width:200px" value="{{ $products->price*$products->number }}"></var>
+                                                            style="width:200px"
+                                                            value="{{ $products->price * $products->number }}"></var>
                                                 </div>
                                             </td>
                                             <td class="text-right d-none d-md-block">
@@ -255,21 +256,24 @@
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Tổng tiền:</dt>
-                            <dd class="text-right ml-3"><div id="totalnumber">
-                                @if (!empty($delete))
-                                {{$delete}} vnđ
-                                @else
-                                {{$total}} vnđ
-                                @endif
+                            <dd class="text-right ml-3">
+                                <div id="totalnumber">
+                                    @if (!empty($delete))
+                                        {{ $delete }} vnđ
+                                    @else
+                                        {{ $total }} vnđ
+                                    @endif
                         </dl>
-                        {{-- <dl class="dlist-align">
-                            <dt>Tổng tiền:</dt>
-                            <dd class="text-right text-dark b ml-3"><strong id="totalnumber"></strong></dd>
-                        </dl> --}}
                         <hr>
-                         <a href="/payment" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
-                            Thanh toán </a> <a href=""
-                            class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Tiếp tục mua hàng</a>
+                        <a href="/payment" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+                            Thanh toán </a> <a href="" class="btn btn-out btn-success btn-square btn-main mt-2"
+                            data-abc="true">Tiếp tục mua hàng</a>
+                        <br><br>
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <strong>{{ Session::get('error') }}</strong>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </aside>

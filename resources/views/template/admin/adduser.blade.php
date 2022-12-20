@@ -12,36 +12,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            function addproduct() {
-                console.log(document.getElementById('detail').options[document.getElementById('detail')
-                        .selectedIndex]
-                    .value)
-                $.ajax({
-                    url: '{{ route('admin-manageproduct-add-post') }}',
-                    type: "get",
-                    dateType: "text",
-                    data: {
-                        name: document.getElementById('name').value,
-                        price: document.getElementById('price').value,
-                        category: document.getElementById('category').options[document.getElementById('category')
-                                .selectedIndex]
-                            .value,
-                        sale: document.getElementById('sale').options[document.getElementById('sale').selectedIndex]
-                            .value,
-                        detail: document.getElementById('detail').options[document.getElementById('detail')
-                                .selectedIndex]
-                            .value,
-                        number: document.getElementById('number').value,
-                        images: document.getElementById('images').value,
-                        content: document.getElementById('content').value,
-                    },
-                });
-                if ($.ajax) {
-                    alert('them thanh cong');
-                }
-            }
-        </script>
     </head>
     <style>
         @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
@@ -176,82 +146,58 @@
                     </div>
                 </header>
                 <div class="container rounded shadow-sm">
-                    <form action="">
+                    <form action="{{ route('admin-manageuser-add-post')}}" method="POST">
+                        @csrfz
                         <div class="row">
                             <div class="col-md-6 col-12 mb-4">
                                 <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Tên sản phẩm</p> <input id="name" class="inputbox"
-                                        required="" placeholder="Tên sản phẩm" type="text">
+                                    <p class="h-blue">Tên người dùng</p> <input name="name" class="inputbox"
+                                        required="" placeholder="Tên người dùng" type="text">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12 mb-4">
                                 <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Giá</p> <input id="price" class="inputbox" required=""
-                                        placeholder="Giá sản phẩm" type="text">
+                                    <p class="h-blue">Gmail</p> <input name="email" class="inputbox" required=""
+                                        placeholder="Giá sản phẩm" type="gmail">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12 mb-4">
                                 <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Số lượng</p> <input id="number" class="inputbox" required=""
-                                        placeholder="Số lượng sản phẩm" type="text">
+                                    <p class="h-blue">Mật khẩu</p> <input name="password" class="inputbox"
+                                        required="" placeholder="Số lượng sản phẩm" type="password">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12 mb-4">
                                 <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Nội dung</p> <input class="inputbox" id="content" required=""
-                                        placeholder="Nội dung" type="text">
+                                    <p class="h-blue">Nhập lại mật khẩu</p> <input name="password_confirmation"
+                                        class="inputbox" required="" placeholder="Số lượng sản phẩm" type="password">
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Thể loại</p> <select class="border-0 outline-none" id="category">
-                                        required=""
-                                        @foreach ($category as $category)
-                                            <option value="{{ $category->idcategory }}">{{ $category->namecategory }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <button class="btn btn-primary form-control text-center" value="submit">Thêm</button>
+                        @if (Session::has('R-error'))
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <strong>{{ Session::get('error') }}</strong>
                             </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">% Sale</p> <select class="border-0 outline-none" id="sale">
-                                        <option value="" hidden selected>0</option>
-                                        @foreach ($sale as $sale)
-                                            <option value="{{ $sale->idSale }}">{{ $sale->numberSale }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        @endif
+                        @if (Session::has('success'))
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <strong>{{ Session::get('success') }}</strong>
                             </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="form-control d-flex flex-column">
-                                    <p class="h-blue">Chi tiết </p> <select class="border-0 outline-none"
-                                        id="detail">
-                                        <option value="" hidden selected>0</option>
-                                        @foreach ($productdetail as $detail1)
-                                            <option value="{{ $detail1->idDetail }}">Tác
-                                                giả:{{ $detail1->author }}-Năm:{{ $detail1->year}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            <div class="col-md-7 mb-4">
-                                <div class="form-control d-flex flex-column">
-                                    <div class="h-blue">
-                                        <input type="file" value="Chọn ảnh" id="images">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary form-control text-center" onclick="adduser()"
-                            value="button">Thêm</button>
+                        @endif
                     </form>
                 </div>
             </div>
         </div>
     </body>
-
     </html>
 @endif

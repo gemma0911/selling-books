@@ -41,7 +41,7 @@
                 });
                 if ($idUser) {
                     if ($.ajax) {
-                        alert('them thanh cong');
+                        window.location = "product-detail?idProduct=" + $id;
                     }
                 } else {
                     alert('vui lòng đăng nhập')
@@ -276,9 +276,23 @@
                                         class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i>
                                 </div>
                             </div>
-                            <h4 class="">{{$data->buy}} Người mua</h4>
+                            <h4 class="">{{ $data->buy }} Người mua</h4>
                             <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Thanh
-                                    toán</button> <button onclick="addtocart({{ $data->idProduct }},{{ session()->get('name') }})" class="btn btn-dark">Giỏ hàng</button> </div>
+                                    toán</button> <button type="submit"
+                                    onclick="addtocart({{ $data->idProduct }},{{ session()->get('name') }})"
+                                    class="btn btn-dark">Giỏ hàng</button>
+                            </div>
+                            <br><br>
+                            @if (Session::has('error'))
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <strong>{{ Session::get('error') }}</strong>
+                                </div>
+                            @endif
+                            @if (Session::has('success'))
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <strong>{{ Session::get('success') }}</strong>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

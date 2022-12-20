@@ -58,6 +58,12 @@
                                 @csrf
                                 <div class="formsix-pos">
                                     <div class="form-group i-email">
+                                        <input type="text" name="name" class="form-control" id="name"
+                                            placeholder="Name *">
+                                    </div>
+                                </div>
+                                <div class="formsix-pos">
+                                    <div class="form-group i-email">
                                         <input type="email" name="email" class="form-control" id="email2"
                                             placeholder="Email Address *">
                                     </div>

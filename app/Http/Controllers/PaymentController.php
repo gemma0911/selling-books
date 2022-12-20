@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use League\CommonMark\Parser\Inline\NewlineParser;
+
 class PaymentController extends Controller
 {
     protected function validator(array $data)
@@ -47,7 +49,18 @@ class PaymentController extends Controller
         if ($validator->fails()) {
             return redirect('/payment')->withErrors($validator)->withInput();
         } else {
+            $cart = DB::table('cart')->join('product', 'product.idProduct', '=', 'cart.idProduct')
+            ->where('cart.idUser', session()->get('idUser'))->where('idPayment',null)
+            ->select('product.numberProduct','product.idProduct','cart.number', 'product.images', 'product.name', 'product.content', 'cart.idProduct', 'product.price')->get();
+
+            foreach ($cart as $product){
+                $qr = DB::table('product')->where('idProduct',$product->idProduct)->update([
+                    'numberProduct' => $product->numberProduct - $product->number,
+                ]);
+            };
+
             Session::flash('success', 'Đặt hàng thành công vui lòng chờ duyệt');
+
             $query = DB::table('payment')->insert([
                 'name' => $request->name,
                 'city' => $request->city,
