@@ -12,7 +12,7 @@ class ManageProduct extends Controller
     public function index(){
         $product['product'] = DB::table('product')->join('category','product.idCategory','=','category.idcategory')->join('sale','product.idSale','=','sale.idSale')
         ->select('category.nameCategory','product.name','product.name',
-        'product.idProduct','product.content','product.buy','product.number','product.images','product.Create_at','product.price'
+        'product.idProduct','product.content','product.buy','product.numberProduct','product.images','product.Create_at','product.price'
         ,'sale.numberSale','product.Update_at')->get();
         return view('template.admin.product',$product);
     }

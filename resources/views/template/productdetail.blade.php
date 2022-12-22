@@ -246,7 +246,7 @@
                         <div class="d-flex flex-column justify-content-center">
                             <div class="main_image"> <img src="/assets/images/{{ $data->images }}"
                                     id="main_product_image" width="350"> </div>
-                            <div class="thumbnail_images">
+                            {{-- <div class="thumbnail_images">
                                 <ul id="thumbnail">
                                     <li><img onclick="changeImage(this)" src="/assets/images/{{ $data->images }}"
                                             width="70"></li>
@@ -257,7 +257,7 @@
                                     <li><img onclick="changeImage(this)" src="/assets/images/{{ $data->images }}"
                                             width="70"></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -266,9 +266,7 @@
                                 <h3>{{ $data->name }}</h3> <span class="heart"><i class='bx bx-heart'></i></span>
                             </div>
                             <div class="mt-2 pr-3 content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt
-                                    ut labore et dolore magna aliqua</p>
+                                <p>{{$data->content}}</p>
                             </div>
                             <h4>Giá : {{ $data->price }} Vnd</h4>
                             <div class="ratings d-flex flex-row align-items-center">
@@ -276,7 +274,7 @@
                                         class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i>
                                 </div>
                             </div>
-                            <h4 class="">{{ $data->buy }} Người mua</h4>
+                            <h4 class="">Đã có {{ $data->buy }} sản phẩm được bán</h4>
                             <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Thanh
                                     toán</button> <button type="submit"
                                     onclick="addtocart({{ $data->idProduct }},{{ session()->get('name') }})"

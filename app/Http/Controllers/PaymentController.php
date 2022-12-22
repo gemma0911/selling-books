@@ -51,11 +51,12 @@ class PaymentController extends Controller
         } else {
             $cart = DB::table('cart')->join('product', 'product.idProduct', '=', 'cart.idProduct')
             ->where('cart.idUser', session()->get('idUser'))->where('idPayment',null)
-            ->select('product.numberProduct','product.idProduct','cart.number', 'product.images', 'product.name', 'product.content', 'cart.idProduct', 'product.price')->get();
+            ->select('product.buy','product.numberProduct','product.idProduct','cart.number', 'product.images', 'product.name', 'product.content', 'cart.idProduct', 'product.price')->get();
 
             foreach ($cart as $product){
                 $qr = DB::table('product')->where('idProduct',$product->idProduct)->update([
                     'numberProduct' => $product->numberProduct - $product->number,
+                    'buy' => $product->buy+$product->number,
                 ]);
             };
 

@@ -68,9 +68,9 @@
     </section>
 
 
-    <section class="pt-5" id="marketing">
+    {{-- <section class="pt-5" id="marketing">
         @include('template.component.footer')
-    </section>
+    </section> --}}
 
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>

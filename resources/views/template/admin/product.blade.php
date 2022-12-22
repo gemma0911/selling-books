@@ -84,7 +84,7 @@
                                                 <td>{{ $product->name }}</td>
                                                 <td>{{ $product->price }}</td>
                                                 <td>{{ $product->numberSale }}</td>
-                                                <td>{{ $product->number }}</td>
+                                                <td>{{ $product->numberProduct }}</td>
                                                 <td>{{ $product->nameCategory }}</td>
                                                 <td>{{ $product->buy }}</td>
                                                 <td>{{ $product->images }}</td>

@@ -11,6 +11,13 @@
             <button class="btn btn-outline-secondary" type="button" onclick="searchproduct1()">Search</button>
         </div>
     </div>
+    <nav class="my-4 d-flex justify-content-end">
+        <ul class="pagination">
+            @for ($j=1 ; $j<=3 ; $j++)
+            <li class="page-item" aria-current="page"><span class="page-link">{{$j}}</span></li>
+            @endfor
+        </ul>
+    </nav>
     <div id="content" class="my-5">
         <div id="filterbar" class="collapse">
             <div class="box border-bottom">
@@ -41,8 +48,8 @@
                             <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Kinh tế <input type="checkbox" name="a1"
                                 value="3"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox" name="a1"
-                                value="4"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Tâm lý kĩ năng sống <input type="checkbox"
+                                name="a1" value="4"> <span class="check"></span> </label> </div>
                     <div class="my-1"> <label class="tick">Nuôi dạy con <input type="checkbox" name="a1"
                                 value="5"> <span class="check"></span>
                         </label> </div>
@@ -99,7 +106,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center price">
-                                    <div class="del mr-2"><span class="text-dark">5500 uah</span></div>
+                                    <div class="del mr-2"><span class="text-dark">Giá : </span></div>
                                     <div class="font-weight-bold">{{ $product->price }}</div>
                                 </div>
                             </div>

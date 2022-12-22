@@ -34,13 +34,9 @@
                         <span
                             class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>
                     </a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bookmarks"></i>
-                        Quản lý hóa đơn </a> </li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('admin-manageuser') }}"> <i class="bi bi-people"></i> Quản
                         lý người dùng
                     </a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bookmarks"></i>
-                        Quản lý giao diện </a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bookmarks"></i>
                         Thông tin liên hệ </a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#"> <i class="bi bi-bookmarks"></i>
